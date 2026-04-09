@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>각인학원 · COVER PROTOTYPE</title>
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+
+  <style>
+    /* ══ proto-only tokens ══ */
+    .proto-label {
+      position: absolute;
+      top: 48px;
+      left: 48px;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 16px;
+      background: rgba(20, 21, 25, 0.72);
+      color: #F6F5F2;
+      font-family: var(--font-base);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      backdrop-filter: blur(4px);
+    }
+    .proto-label__dot {
+      width: 6px;
+      height: 6px;
+      background: #F6F5F2;
+      border-radius: 50%;
+    }
+
+    /* ══ shared proto cover · image background base ══ */
+    .proto-cover {
+      background-color: #0B0C10;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .proto-cover::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .proto-cover > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ══ VARIANT A · trinity-lounge ══
+       어두운 배경 + 골드 펜던트.
+       가벼운 하단 그라디언트만. */
+    #cover-a {
+      background-image: url("assets/sawoo/trinity-lounge.jpeg");
+      background-position: center 35%;
+    }
+    #cover-a::before {
+      background:
+        linear-gradient(180deg,
+          rgba(11, 12, 16, 0.55) 0%,
+          rgba(11, 12, 16, 0.15) 38%,
+          rgba(11, 12, 16, 0.35) 62%,
+          rgba(11, 12, 16, 0.88) 100%);
+    }
+
+    /* ══ VARIANT B · shinyoung-study ══
+       밝은 편 → 전체 틴트 + 하단 그라디언트 */
+    #cover-b {
+      background-image: url("assets/sawoo/shinyoung-study.jpg");
+      background-position: center 50%;
+    }
+    #cover-b::before {
+      background:
+        linear-gradient(180deg,
+          rgba(11, 12, 16, 0.68) 0%,
+          rgba(11, 12, 16, 0.42) 40%,
+          rgba(11, 12, 16, 0.55) 65%,
+          rgba(11, 12, 16, 0.92) 100%);
+    }
+
+    /* ══ VARIANT C · sangji-lobby ══
+       밝고 채도 높음 → 강한 더블 오버레이 */
+    #cover-c {
+      background-image: url("assets/sawoo/sangji-lobby.png");
+      background-position: center 45%;
+    }
+    #cover-c::before {
+      background:
+        linear-gradient(180deg,
+          rgba(11, 12, 16, 0.78) 0%,
+          rgba(11, 12, 16, 0.45) 35%,
+          rgba(11, 12, 16, 0.6) 65%,
+          rgba(11, 12, 16, 0.94) 100%);
+    }
+
+    /* ══ VARIANT D · classroom-moody ══
+       시네마틱 · 강한 방향성 조명 · 녹색 칠판 포커스 */
+    #cover-d {
+      background-image: url("assets/sawoo/classroom-moody.jpg");
+      background-position: center 55%;
+    }
+    #cover-d::before {
+      background:
+        linear-gradient(180deg,
+          rgba(11, 12, 16, 0.5) 0%,
+          rgba(11, 12, 16, 0.12) 40%,
+          rgba(11, 12, 16, 0.35) 68%,
+          rgba(11, 12, 16, 0.92) 100%);
+    }
+
+    /* ══ VARIANT F · hero-lecture-hall ══
+       대강의실 · 대칭적 원근감 · 권위적 */
+    #cover-f {
+      background-image: url("assets/sawoo/hero-lecture-hall.jpg");
+      background-position: center 55%;
+    }
+    #cover-f::before {
+      background:
+        linear-gradient(180deg,
+          rgba(11, 12, 16, 0.65) 0%,
+          rgba(11, 12, 16, 0.28) 42%,
+          rgba(11, 12, 16, 0.5) 66%,
+          rgba(11, 12, 16, 0.94) 100%);
+    }
+
+    /* ══ VARIANT E · GRIP 교재 에디토리얼 스플릿 ══
+       상단 크림 패널 + 하단 GRIP 책 사진. 교재 개발 서사 강조 */
+    #cover-e {
+      background: var(--paper-warm);
+    }
+    #cover-e .proto-split-photo {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 58%;
+      background-image: url("assets/grip_mockup.jpeg");
+      background-size: cover;
+      background-position: center 35%;
+    }
+    #cover-e .proto-split-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg,
+        rgba(246, 245, 242, 0.25) 0%,
+        rgba(246, 245, 242, 0) 18%,
+        rgba(246, 245, 242, 0) 100%);
+    }
+    #cover-e .p01__eyebrow {
+      color: rgba(20, 21, 25, 0.58);
+    }
+    #cover-e .p01__inner {
+      top: 28%;
+      transform: none;
+    }
+    #cover-e .p01__title {
+      color: var(--ink);
+      text-shadow: none;
+      font-size: 132px;
+    }
+    #cover-e .p01__rule {
+      background: rgba(20, 21, 25, 0.35);
+    }
+    #cover-e .p01__sub {
+      color: var(--ink-70);
+    }
+    #cover-e .p01__facts {
+      bottom: 64px;
+      border-top-color: rgba(246, 245, 242, 0.38);
+    }
+
+    /* ══ VARIANT H · trinity-carrels 풀블리드 ══
+       트리니티 캐럴 좌석 · 라인 조명 · 몰입 공간 */
+    #cover-h {
+      background-image: url("assets/sawoo/trinity-carrels.jpeg");
+      background-position: center 50%;
+    }
+    #cover-h::before {
+      background:
+        linear-gradient(180deg,
+          rgba(11, 12, 16, 0.72) 0%,
+          rgba(11, 12, 16, 0.3) 40%,
+          rgba(11, 12, 16, 0.5) 66%,
+          rgba(11, 12, 16, 0.94) 100%);
+    }
+
+    /* ══ VARIANT I · trinity-lounge 에디토리얼 스플릿 ══
+       상단 트리니티 사진 + 하단 크림 패널 · 매거진 스타일 */
+    #cover-i {
+      background: var(--paper-warm);
+    }
+    #cover-i .proto-split-photo {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 64%;
+      background-image: url("assets/sawoo/trinity-lounge.jpeg");
+      background-size: cover;
+      background-position: center 40%;
+    }
+    #cover-i .proto-split-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg,
+        rgba(11, 12, 16, 0.28) 0%,
+        rgba(11, 12, 16, 0.05) 30%,
+        rgba(11, 12, 16, 0) 100%);
+    }
+    #cover-i .p01__eyebrow {
+      color: rgba(246, 245, 242, 0.82);
+    }
+    #cover-i .p01__inner {
+      top: auto;
+      bottom: 22%;
+      transform: none;
+    }
+    #cover-i .p01__title {
+      color: var(--ink);
+      text-shadow: none;
+      font-size: 128px;
+    }
+    #cover-i .p01__rule {
+      background: rgba(20, 21, 25, 0.35);
+    }
+    #cover-i .p01__sub {
+      color: var(--ink-70);
+    }
+    #cover-i .p01__facts {
+      border-top-color: rgba(20, 21, 25, 0.22);
+    }
+    #cover-i .p01__fact-label {
+      color: rgba(20, 21, 25, 0.55);
+    }
+    #cover-i .p01__fact-value {
+      color: var(--ink);
+    }
+
+    /* ══ VARIANT G · SHINYOUNG 에디토리얼 스플릿 ══
+       상단 사진 + 하단 크림 패널 (매거진 스타일) */
+    #cover-g {
+      background: var(--paper-warm);
+    }
+    #cover-g .proto-split-photo {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 64%;
+      background-image: url("assets/sawoo/shinyoung-study.jpg");
+      background-size: cover;
+      background-position: center 50%;
+    }
+    #cover-g .proto-split-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg,
+        rgba(11, 12, 16, 0.35) 0%,
+        rgba(11, 12, 16, 0.05) 30%,
+        rgba(11, 12, 16, 0) 100%);
+    }
+    #cover-g .p01__eyebrow {
+      color: rgba(246, 245, 242, 0.78);
+    }
+    #cover-g .p01__inner {
+      top: auto;
+      bottom: 22%;
+      transform: none;
+    }
+    #cover-g .p01__title {
+      color: var(--ink);
+      text-shadow: none;
+      font-size: 128px;
+    }
+    #cover-g .p01__rule {
+      background: rgba(20, 21, 25, 0.35);
+    }
+    #cover-g .p01__sub {
+      color: var(--ink-70);
+    }
+    #cover-g .p01__facts {
+      border-top-color: rgba(20, 21, 25, 0.22);
+    }
+    #cover-g .p01__fact-label {
+      color: rgba(20, 21, 25, 0.55);
+    }
+    #cover-g .p01__fact-value {
+      color: var(--ink);
+    }
+
+    /* ══ proto cover inner · 동일 레이아웃 ══ */
+    .proto-cover .p01__eyebrow {
+      color: rgba(246, 245, 242, 0.7);
+    }
+    .proto-cover .p01__title {
+      color: #F6F5F2;
+      text-shadow: 0 2px 28px rgba(0, 0, 0, 0.5);
+    }
+    .proto-cover .p01__rule {
+      background: rgba(246, 245, 242, 0.55);
+    }
+    .proto-cover .p01__sub {
+      color: rgba(246, 245, 242, 0.88);
+    }
+    .proto-cover .p01__facts {
+      border-top-color: rgba(246, 245, 242, 0.28);
+    }
+    .proto-cover .p01__fact-label {
+      color: rgba(246, 245, 242, 0.62);
+    }
+    .proto-cover .p01__fact-value {
+      color: #F6F5F2;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="scroll-container" id="scrollContainer">
+    <div class="scale-wrapper" id="scaleWrapper">
+
+      <!-- ══════════════════════════════════════════
+           VARIANT A · TRINITY LOUNGE
+      ══════════════════════════════════════════ -->
+      <div class="frame proto-cover" id="cover-a">
+        <div class="proto-label">
+          <span class="proto-label__dot"></span>
+          VARIANT A · TRINITY LOUNGE
+        </div>
+        <p class="p01__eyebrow">GAKIN ACADEMY · COMPANY PROFILE</p>
+        <div class="p01__inner">
+          <h1 class="p01__title">각인학원</h1>
+          <div class="p01__rule"></div>
+          <p class="p01__sub">학원 소개서 · 2026 EDITION</p>
+        </div>
+        <div class="p01__facts">
+          <div class="p01__fact"><span class="p01__fact-label">EST.</span><span class="p01__fact-value">2021</span></div>
+          <div class="p01__fact"><span class="p01__fact-label">BRANCHES</span><span class="p01__fact-value">4</span></div>
+          <div class="p01__fact"><span class="p01__fact-label">LOCATION</span><span class="p01__fact-value">김포 · 고촌</span></div>
+        </div>
+      </div>
+
+
+      <!-- ══════════════════════════════════════════
+           VARIANT B · SHINYOUNG STUDY
+      ══════════════════════════════════════════ -->
+      <div class="frame proto-cover" id="cover-b">
+        <div class="proto-label">
+          <span class="proto-label__dot"></span>
+          VARIANT B · SHINYOUNG STUDY
+        </div>
+        <p class="p01__eyebrow">GAKIN ACADEMY · COMPANY PROFILE</p>
+        <div class="p01__inner">
+          <h1 class="p01__title">각인학원</h1>
+          <div class="p01__rule"></div>
+          <p class="p01__sub">학원 소개서 · 2026 EDITION</p>
+        </div>
+        <div class="p01__facts">
+          <div class="p01__fact"><span class="p01__fact-label">EST.</span><span class="p01__fact-value">2021</span></div>
+          <div class="p01__fact"><span class="p01__fact-label">BRANCHES</span><span class="p01__fact-value">4</span></div>
+          <div class="p01__fact"><span class="p01__fact-label">LOCATION</span><span class="p01__fact-value">김포 · 고촌</span></div>
+        </div>
+      </div>
+
+
+      <!-- ══════════════════════════════════════════
+           VARIANT C · SANGJI LOBBY
+      ══════════════════════════════════════════ -->
+      <div class="frame proto-cover" id="cover-c">
+        <div class="proto-label">
+          <span class="proto-label__dot"></span>
+          VARIANT C · SANGJI LOBBY
+        </div>
+        <p class="p01__eyebrow">GAKIN ACADEMY · COMPANY PROFILE</p>
+        <div class="p01__inner">
+          <h1 class="p01__title">각인학원</h1>
+          <div class="p01__rule"></div>
+          <p class="p01__sub">학원 소개서 · 2026 EDITION</p>
+        </div>
+        <div class="p01__facts">
+          <div class="p01__fact"><span class="p01__fact-label">EST.</span><span class="p01__fact-value">2021</span></div>
+          <div class="p01__fact"><span class="p01__fact-label">BRANCHES</span><span class="p01__fact-value">4</span></div>
+          <div class="p01__fact"><span class="p01__fact-label">LOCATION</span><span class="p01__fact-value">김포 · 고촌</span></div>
+        </div>
+      </div>
+
+
+      <!-- ══════════════════════════════════════════
+           VARIANT D · CLASSROOM MOODY
+      ══════════════════════════════════════════ -->
+      <div class="frame proto-cover" id="cover-d">
+        <div class="proto-label">
+          <span class="proto-label__dot"></span>
+          VARIANT D · CLASSROOM MOODY
+        </div>
+        <p class="p01__eyebrow">GAKIN ACADEMY · COMPANY PROFILE</p>
+        <div class="p01__inner">
+          <h1 class="p01__title">각인학원</h1>
+          <div class="p01__rule"></div>
+          <p class="p01__sub">학원 소개서 · 2026 EDITION</p>
+        </div>
+        <div class="p01__facts">
+          <div class="p01__fact"><span class="p01__fact-label">EST.</span><span class="p01__fact-value">2021</span></div>
+          <div class="p01__fact"><span class="p01__fact-label">BRANCHES</span><span class="p01__fact-value">4</span></div>
+          <div class="p01__fact"><span class="p01__fact-label">LOCATION</span><span class="p01__fact-value">김포 · 고촌</span></div>
+        </div>
+      </div>
+
+
+      <!-- ══════════════════════════════════════════
+           VARIANT E · GRIP BOOKS EDITORIAL (cream top · photo bottom)
+      ══════════════════════════════════════════ -->
+      <div class="frame proto-cover" id="cover-e">
+        <div class="proto-label">
+          <span class="proto-label__dot"></span>
+          VARIANT E · GRIP BOOKS EDITORIAL
+        </div>
+        <div class="proto-split-photo"></div>
+        <p class="p01__eyebrow">GAKIN ACADEMY · COMPANY PROFILE</p>
+        <div class="p01__inner">
+          <h1 class="p01__title">각인학원</h1>
+          <div class="p01__rule"></div>
+          <p class="p01__sub">학원 소개서 · 2026 EDITION</p>
+        </div>
+        <div class="p01__facts">
+          <div class="p01__fact"><span class="p01__fact-label">EST.</span><span class="p01__fact-value">2021</span></div>
+          <div class="p01__fact"><span class="p01__fact-label">BRANCHES</span><span class="p01__fact-value">4</span></div>
+          <div class="p01__fact"><span class="p01__fact-label">LOCATION</span><span class="p01__fact-value">김포 · 고촌</span></div>
+        </div>
+      </div>
+
+
+      <!-- ══════════════════════════════════════════
+           VARIANT F · HERO LECTURE HALL
+      ══════════════════════════════════════════ -->
+      <div class="frame proto-cover" id="cover-f">
+        <div class="proto-label">
+          <span class="proto-label__dot"></span>
+          VARIANT F · HERO LECTURE HALL
+        </div>
+        <p class="p01__eyebrow">GAKIN ACADEMY · COMPANY PROFILE</p>
+        <div class="p01__inner">
+          <h1 class="p01__title">각인학원</h1>
+          <div class="p01__rule"></div>
+          <p class="p01__sub">학원 소개서 · 2026 EDITION</p>
+        </div>
+        <div class="p01__facts">
+          <div class="p01__fact"><span class="p01__fact-label">EST.</span><span class="p01__fact-value">2021</span></div>
+          <div class="p01__fact"><span class="p01__fact-label">BRANCHES</span><span class="p01__fact-value">4</span></div>
+          <div class="p01__fact"><span class="p01__fact-label">LOCATION</span><span class="p01__fact-value">김포 · 고촌</span></div>
+        </div>
+      </div>
+
+
+      <!-- ══════════════════════════════════════════
+           VARIANT H · TRINITY CARRELS (full bleed)
+      ══════════════════════════════════════════ -->
+      <div class="frame proto-cover" id="cover-h">
+        <div class="proto-label">
+          <span class="proto-label__dot"></span>
+          VARIANT H · TRINITY CARRELS
+        </div>
+        <p class="p01__eyebrow">GAKIN ACADEMY · COMPANY PROFILE</p>
+        <div class="p01__inner">
+          <h1 class="p01__title">각인학원</h1>
+          <div class="p01__rule"></div>
+          <p class="p01__sub">학원 소개서 · 2026 EDITION</p>
+        </div>
+        <div class="p01__facts">
+          <div class="p01__fact"><span class="p01__fact-label">EST.</span><span class="p01__fact-value">2021</span></div>
+          <div class="p01__fact"><span class="p01__fact-label">BRANCHES</span><span class="p01__fact-value">4</span></div>
+          <div class="p01__fact"><span class="p01__fact-label">LOCATION</span><span class="p01__fact-value">김포 · 고촌</span></div>
+        </div>
+      </div>
+
+
+      <!-- ══════════════════════════════════════════
+           VARIANT I · TRINITY LOUNGE SPLIT (photo top · cream bottom)
+      ══════════════════════════════════════════ -->
+      <div class="frame proto-cover" id="cover-i">
+        <div class="proto-label">
+          <span class="proto-label__dot"></span>
+          VARIANT I · TRINITY LOUNGE SPLIT
+        </div>
+        <div class="proto-split-photo"></div>
+        <p class="p01__eyebrow">GAKIN ACADEMY · COMPANY PROFILE</p>
+        <div class="p01__inner">
+          <h1 class="p01__title">각인학원</h1>
+          <div class="p01__rule"></div>
+          <p class="p01__sub">학원 소개서 · 2026 EDITION</p>
+        </div>
+        <div class="p01__facts">
+          <div class="p01__fact"><span class="p01__fact-label">EST.</span><span class="p01__fact-value">2021</span></div>
+          <div class="p01__fact"><span class="p01__fact-label">BRANCHES</span><span class="p01__fact-value">4</span></div>
+          <div class="p01__fact"><span class="p01__fact-label">LOCATION</span><span class="p01__fact-value">김포 · 고촌</span></div>
+        </div>
+      </div>
+
+
+      <!-- ══════════════════════════════════════════
+           VARIANT G · SHINYOUNG SPLIT (photo top · cream bottom)
+      ══════════════════════════════════════════ -->
+      <div class="frame proto-cover" id="cover-g">
+        <div class="proto-label">
+          <span class="proto-label__dot"></span>
+          VARIANT G · SHINYOUNG SPLIT
+        </div>
+        <div class="proto-split-photo"></div>
+        <p class="p01__eyebrow">GAKIN ACADEMY · COMPANY PROFILE</p>
+        <div class="p01__inner">
+          <h1 class="p01__title">각인학원</h1>
+          <div class="p01__rule"></div>
+          <p class="p01__sub">학원 소개서 · 2026 EDITION</p>
+        </div>
+        <div class="p01__facts">
+          <div class="p01__fact"><span class="p01__fact-label">EST.</span><span class="p01__fact-value">2021</span></div>
+          <div class="p01__fact"><span class="p01__fact-label">BRANCHES</span><span class="p01__fact-value">4</span></div>
+          <div class="p01__fact"><span class="p01__fact-label">LOCATION</span><span class="p01__fact-value">김포 · 고촌</span></div>
+        </div>
+      </div>
+
+    </div><!-- /scale-wrapper -->
+  </div><!-- /scroll-container -->
+
+  <script src="js/scaler.js"></script>
+</body>
+
+</html>

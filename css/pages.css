@@ -76,9 +76,9 @@
 .info-row {
   display: grid;
   grid-template-columns: 220px 1fr;
-  align-items: baseline;
+  align-items: center;
   gap: 36px;
-  padding: 20px 0;
+  padding: 18px 0;
   border-bottom: 1px solid var(--rule);
 }
 
@@ -86,6 +86,7 @@
   font-family: var(--font-base);
   font-size: 12px;
   font-weight: 700;
+  line-height: 1.2;
   letter-spacing: 0.26em;
   color: var(--ink-50);
   text-transform: uppercase;
@@ -93,9 +94,9 @@
 
 .info-row__value {
   font-family: var(--font-base);
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.35;
   letter-spacing: -0.005em;
   color: var(--ink);
   word-break: keep-all;
@@ -726,13 +727,13 @@
 
 .p10__desc {
   position: absolute;
-  top: 770px;
+  top: 760px;
   left: var(--margin-x);
   right: var(--margin-x);
   font-family: var(--font-base);
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 500;
-  line-height: 1.65;
+  line-height: 1.6;
   letter-spacing: -0.005em;
   color: var(--ink);
   word-break: keep-all;
@@ -740,7 +741,7 @@
 
 .p10__info {
   position: absolute;
-  top: 930px;
+  top: 910px;
   left: var(--margin-x);
   right: var(--margin-x);
 }
@@ -914,6 +915,8 @@
   left: var(--margin-x);
   width: 840px;
   height: 360px;
+  object-fit: cover;
+  display: block;
 }
 
 .branch__info {
@@ -921,6 +924,74 @@
   top: 830px;
   left: var(--margin-x);
   right: var(--margin-x);
+}
+
+
+/* ══════════════════════════════════════════
+   PAGE 15 · SAWOO CAMPUS · 6 buildings grid
+   ══════════════════════════════════════════ */
+.p15__grid {
+  position: absolute;
+  top: 440px;
+  left: var(--margin-x);
+  right: var(--margin-x);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 28px;
+  row-gap: 44px;
+}
+
+.p15__card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.p15__card-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  background: var(--paper-shadow);
+}
+
+.p15__card-cap {
+  padding-top: 14px;
+  margin-top: 12px;
+  border-top: 1px solid var(--ink);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  row-gap: 6px;
+  column-gap: 12px;
+  align-items: baseline;
+}
+
+.p15__card-name {
+  grid-column: 1;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.p15__card-num {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--index-blue);
+  font-feature-settings: "tnum";
+}
+
+.p15__card-desc {
+  grid-column: 1 / -1;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--ink-70);
+  letter-spacing: -0.002em;
 }
 
 
