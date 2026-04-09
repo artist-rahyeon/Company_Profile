@@ -15,7 +15,7 @@
   transform-origin: top center;
 }
 
-/* ── Frame Base ── */
+/* ── Frame Base · 모든 페이지 공통 ── */
 .frame {
   width: var(--frame-w);
   height: var(--frame-h);
@@ -23,30 +23,69 @@
   overflow: hidden;
   scroll-snap-align: start;
   flex-shrink: 0;
+  background: var(--paper);
+  transition: background-color 240ms ease;
 }
 
-/* ── Safe Area ── */
-.safe {
-  padding-left: var(--margin);
-  padding-right: var(--margin);
-}
-
-/* ── Image Placeholder ── */
+/* ── Image Placeholder · 십자선 + 라벨 ── */
 .img-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--paper-shadow);
+  background-image:
+    linear-gradient(var(--silver), var(--silver)),
+    linear-gradient(var(--silver), var(--silver));
+  background-size: 56px 1px, 1px 56px;
+  background-position: center center, center center;
+  background-repeat: no-repeat, no-repeat;
 }
 
 .img-placeholder::after {
   content: attr(data-label);
+  position: absolute;
+  top: 24px;
+  left: 24px;
   font-family: var(--font-base);
-  font-size: 22px;
-  font-weight: 300;
-  color: #999;
-  text-align: center;
-  padding: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: var(--silver);
+  text-transform: uppercase;
+}
+
+/* ── Theme Toggle · WARM / NEUTRAL 비교용 ── */
+.theme-toggle {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 1001;
+  display: flex;
+  gap: 1px;
+  padding: 3px;
+  background: rgba(26, 28, 35, 0.04);
+}
+
+.theme-toggle button {
+  background: transparent;
+  border: none;
+  padding: 7px 14px;
+  font-family: var(--font-base);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: var(--ink-40);
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: color 200ms ease, background-color 200ms ease;
+}
+
+.theme-toggle button:hover {
+  color: var(--ink-60);
+}
+
+.theme-toggle button.active {
+  color: var(--ink);
+  background: rgba(26, 28, 35, 0.06);
 }
 
 /* ── Page Indicator ── */
@@ -64,8 +103,8 @@
 .dot {
   width: 5px;
   height: 5px;
-  background: var(--silver);
-  opacity: 0.35;
+  background: var(--ink);
+  opacity: 0.22;
   transition: opacity 0.3s ease, height 0.3s ease;
 }
 

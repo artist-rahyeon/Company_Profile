@@ -1,81 +1,190 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 
 :root {
-  /* Colors */
-  --midnight: #1A1C23;
-  --offwhite:  #FAFAFA;
-  --silver:    #B0B3B8;
+  /* ─ Paper (background) · toggleable ─ */
+  --paper-warm:    #F6F5F2;   /* Aesop / Kinfolk 계열 웜 크림 */
+  --paper-neutral: #FAFAFA;   /* 뉴트럴 오프화이트 */
+  --paper:         var(--paper-warm);
 
-  /* Frame */
-  --frame-w: 1080px;
-  --frame-h: 1920px;
-  --margin:   100px;
+  /* ─ Ink ─ */
+  --ink:           #1A1C23;
+  --ink-60:        rgba(26, 28, 35, 0.55);
+  --ink-40:        rgba(26, 28, 35, 0.35);
+  --silver:        #B0B3B8;
+  --paper-shadow:  #EAE8E3;
+
+  /* ─ Frame ─ */
+  --frame-w:   1080px;
+  --frame-h:   1920px;
+  --margin-x:  140px;
+  --margin-y:  200px;
   --gutter:    24px;
 
-  /* Typography */
+  /* ─ Font ─ */
   --font-base: 'Pretendard', 'Noto Sans KR', sans-serif;
-
-  --h1-size:   100px;
-  --h1-weight: 800;
-  --h1-lh:     1.2;
-  --h1-ls:    -0.03em;
-
-  --h2-size:    64px;
-  --h2-weight:  700;
-  --h2-lh:      1.3;
-  --h2-ls:     -0.02em;
-
-  --body-size:  28px;
-  --body-weight: 300;
-  --body-lh:    1.6;
-  --body-ls:    0em;
 }
 
-/* Typography Classes */
+body.theme-neutral {
+  --paper: var(--paper-neutral);
+}
+
+/* ══════════════════════════════════════════
+   Typography scale
+══════════════════════════════════════════ */
 .h1 {
   font-family: var(--font-base);
-  font-size: var(--h1-size);
-  font-weight: var(--h1-weight);
-  line-height: var(--h1-lh);
-  letter-spacing: var(--h1-ls);
+  font-size: 92px;
+  font-weight: 800;
+  line-height: 1.22;
+  letter-spacing: -0.035em;
+  word-break: keep-all;
+  white-space: pre-line;
 }
 
 .h2 {
   font-family: var(--font-base);
-  font-size: var(--h2-size);
-  font-weight: var(--h2-weight);
-  line-height: var(--h2-lh);
-  letter-spacing: var(--h2-ls);
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.022em;
+  word-break: keep-all;
+  white-space: pre-line;
 }
 
 .body {
   font-family: var(--font-base);
-  font-size: var(--body-size);
-  font-weight: var(--body-weight);
-  line-height: var(--body-lh);
-  letter-spacing: var(--body-ls);
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 1.9;
+  letter-spacing: 0;
+  word-break: keep-all;
+  white-space: pre-line;
 }
 
-.num-320 {
+.body-long {
   font-family: var(--font-base);
-  font-size: 320px;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.05em;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.95;
+  letter-spacing: 0;
+  word-break: keep-all;
+  white-space: pre-line;
 }
 
-.num-220 {
+.caption {
   font-family: var(--font-base);
-  font-size: 220px;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.04em;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  word-break: keep-all;
 }
 
-.num-160 {
+.label {
   font-family: var(--font-base);
-  font-size: 160px;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.03em;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.22em;
+  color: var(--silver);
+  text-transform: uppercase;
+}
+
+.num-xl {
+  font-family: var(--font-base);
+  font-size: 360px;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.num-l {
+  font-family: var(--font-base);
+  font-size: 200px;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+}
+
+/* ══════════════════════════════════════════
+   Split layout shared · P09 · P10 · P11 · P15
+══════════════════════════════════════════ */
+.split-headline {
+  font-family: var(--font-base);
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.32;
+  letter-spacing: -0.025em;
+  word-break: keep-all;
+  white-space: pre-line;
+  color: var(--ink);
+}
+
+.split-body {
+  font-family: var(--font-base);
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.9;
+  letter-spacing: 0;
+  word-break: keep-all;
+  white-space: pre-line;
+  color: var(--ink);
+}
+
+/* ══════════════════════════════════════════
+   Spec bar · 페이지 하단 스펙 시트
+══════════════════════════════════════════ */
+.spec-bar {
+  position: absolute;
+  left: var(--margin-x);
+  right: var(--margin-x);
+  bottom: var(--margin-y);
+  font-family: var(--font-base);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--ink-60);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.spec-bar--split {
+  text-align: left;
+}
+
+/* 중앙 정렬 스펙시트 블록 · P12 · P16 */
+.spec-stack {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.spec-stack__row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 48px;
+  width: 480px;
+  font-family: var(--font-base);
+  text-align: left;
+  align-items: center;
+}
+
+.spec-stack__row span:first-child {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  color: var(--silver);
+  text-transform: uppercase;
+}
+
+.spec-stack__row span:last-child {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--ink);
 }
