@@ -12,32 +12,47 @@
 </head>
 <body>
 
-  <!-- 테마 비교 토글 -->
+  <!-- ══ 수학비서 마크 · 공통 심볼 정의 ══ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="sbG1" x1="304.78" y1="505.356" x2="312.122" y2="52.265" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#1B3EDA"/>
+        <stop offset="1" stop-color="#2E57FF"/>
+      </linearGradient>
+      <linearGradient id="sbG2" x1="480.265" y1="108.574" x2="154.638" y2="424.867" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#2048FF"/>
+        <stop offset="1" stop-color="#1FA5FF"/>
+      </linearGradient>
+      <linearGradient id="sbG3" x1="70.9189" y1="268.399" x2="525.571" y2="275.792" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#2048FF"/>
+        <stop offset="1" stop-color="#1FA5FF"/>
+      </linearGradient>
+      <linearGradient id="sbG4" x1="138.675" y1="105.727" x2="453.812" y2="432.403" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#2048FF"/>
+        <stop offset="1" stop-color="#1FA5FF"/>
+      </linearGradient>
+    </defs>
+    <symbol id="sb-mark" viewBox="0 0 613 543">
+      <path d="M350.169 53.6328H264.582V488.624H350.169V53.6328Z" fill="url(#sbG1)"/>
+      <path d="M127.653 396.006L188.172 456.316L496.818 148.731L436.299 88.4204L127.653 396.006Z" fill="url(#sbG2)"/>
+      <path d="M524.199 313.788V228.201L87.708 228.201V313.788H524.199Z" fill="url(#sbG3)"/>
+      <path d="M427.098 457.127L487.617 396.816L178.971 89.2312L118.453 149.542L427.098 457.127Z" fill="url(#sbG4)"/>
+    </symbol>
+  </svg>
+
+  <!-- ══ 테마 비교 토글 ══ -->
   <div class="theme-toggle" id="themeToggle">
     <button type="button" data-theme="warm">Warm</button>
     <button type="button" data-theme="neutral">Neutral</button>
   </div>
 
-  <!-- 페이지 인디케이터 -->
+  <!-- ══ 페이지 인디케이터 · 20 dots ══ -->
   <nav class="page-indicator" id="indicator">
-    <div class="dot active" data-page="0"></div>
-    <div class="dot" data-page="1"></div>
-    <div class="dot" data-page="2"></div>
-    <div class="dot" data-page="3"></div>
-    <div class="dot" data-page="4"></div>
-    <div class="dot" data-page="5"></div>
-    <div class="dot" data-page="6"></div>
-    <div class="dot" data-page="7"></div>
-    <div class="dot" data-page="8"></div>
-    <div class="dot" data-page="9"></div>
-    <div class="dot" data-page="10"></div>
-    <div class="dot" data-page="11"></div>
-    <div class="dot" data-page="12"></div>
-    <div class="dot" data-page="13"></div>
-    <div class="dot" data-page="14"></div>
-    <div class="dot" data-page="15"></div>
-    <div class="dot" data-page="16"></div>
-    <div class="dot" data-page="17"></div>
+    <div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
   </nav>
 
   <div class="scroll-container" id="scrollContainer">
@@ -47,7 +62,8 @@
       <div class="frame" id="p01">
         <div class="p01__inner">
           <p class="p01__eyebrow">BRAND REPORT · 2026</p>
-          <p class="p01__title">각인</p>
+          <h1 class="p01__title">각인</h1>
+          <div class="p01__rule"></div>
           <p class="p01__sub">의지에 기대지 않는 학습 구조.</p>
         </div>
         <p class="p01__foot">GAKIN ACADEMY  ·  EST. 2023</p>
@@ -61,53 +77,54 @@
           <li class="p02__item"><span class="p02__idx">01</span><span class="p02__title">핵심 철학</span></li>
           <li class="p02__item"><span class="p02__idx">02</span><span class="p02__title">성장의 궤적</span></li>
           <li class="p02__item"><span class="p02__idx">03</span><span class="p02__title">공간과 몰입</span></li>
-          <li class="p02__item"><span class="p02__idx">04</span><span class="p02__title">학습 엔진</span></li>
-          <li class="p02__item"><span class="p02__idx">05</span><span class="p02__title">콘텐츠 레이어</span></li>
-          <li class="p02__item"><span class="p02__idx">06</span><span class="p02__title">증명과 생태계</span></li>
+          <li class="p02__item"><span class="p02__idx">04</span><span class="p02__title">학습 엔진 · 수학비서</span></li>
+          <li class="p02__item"><span class="p02__idx">05</span><span class="p02__title">INDEX — 문항의 숫자</span></li>
+          <li class="p02__item"><span class="p02__idx">06</span><span class="p02__title">콘텐츠 · GRIP &amp; OBJET</span></li>
+          <li class="p02__item"><span class="p02__idx">07</span><span class="p02__title">증명과 생태계</span></li>
+          <li class="p02__item"><span class="p02__idx">08</span><span class="p02__title">거점과 비전</span></li>
         </ul>
-        <p class="page-num">02 / 18</p>
+        <p class="page-num">02 / 20</p>
       </div>
 
       <!-- ══ PAGE 03 · Philosophy ══ -->
       <div class="frame" id="p03">
         <p class="page-label">01  ·  PHILOSOPHY</p>
-        <p class="p03__headline">교육은 직관의 영역이 아닙니다.&#10;검증된 시스템의 영역입니다.</p>
-        <p class="body p03__body">강사의 감각은 훌륭하지만 복제되지 않습니다.&#10;우리는 그 자리를 구조로 대체했습니다.&#10;누가 가르치는가에서, 어떤 환경에서 배우는가로.</p>
-        <p class="page-num">03 / 18</p>
+        <p class="p03__headline">교육은 직관의 영역이&#10;아닙니다.&#10;&#10;검증된 시스템의&#10;영역입니다.</p>
+        <p class="body-lead p03__body">강사의 감각은 훌륭합니다.&#10;다만 복제되지 않습니다.&#10;우리는 그 자리를 구조로 대체했습니다.&#10;누가 가르치는가에서, 어떤 환경에서 배우는가로.</p>
+        <p class="page-num">03 / 20</p>
       </div>
 
       <!-- ══ PAGE 04 · Trajectory ══ -->
       <div class="frame" id="p04">
         <p class="page-label">02  ·  TRAJECTORY</p>
-        <p class="h2 p04__headline">1년 만에 530%.&#10;시스템이 증명한 확장의 기록.</p>
+        <p class="h2 p04__headline">1년 만에 530%.&#10;시스템이 증명한 확장의 궤적.</p>
         <p class="body p04__body">2023년 사우본원을 시작으로, 동일한 운영 원칙을&#10;수도권 거점에 이식해왔습니다. 궤적은 지표로 남습니다.</p>
         <div class="p04__timeline">
-          <svg viewBox="0 0 800 420" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-            <line x1="20" y1="210" x2="780" y2="210" stroke="#B0B3B8" stroke-width="1"/>
-            <!-- 5 nodes -->
-            <g font-family="Pretendard, sans-serif" fill="#1A1C23">
-              <!-- Node 1 -->
-              <circle cx="20"  cy="210" r="5" fill="#1A1C23"/>
-              <text x="20"  y="170" font-size="13" font-weight="500" letter-spacing="2" text-anchor="middle" fill="#B0B3B8">2023</text>
-              <text x="20"  y="260" font-size="16" font-weight="600" text-anchor="middle">사우본원</text>
-              <text x="20"  y="282" font-size="11" fill="#B0B3B8" text-anchor="middle" letter-spacing="1.4">ORIGIN</text>
+          <svg viewBox="0 0 800 360" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <line x1="30" y1="180" x2="770" y2="180" stroke="#141519" stroke-width="1" stroke-opacity="0.22"/>
+            <g font-family="Pretendard, sans-serif">
+              <!-- Node 1 · Origin -->
+              <circle cx="30"  cy="180" r="6" fill="#141519"/>
+              <text x="30"  y="135" font-size="12" font-weight="600" letter-spacing="2" text-anchor="middle" fill="#8E9097">2023</text>
+              <text x="30"  y="225" font-size="17" font-weight="700" text-anchor="middle" fill="#141519">사우본원</text>
+              <text x="30"  y="250" font-size="10" fill="#8E9097" text-anchor="middle" letter-spacing="1.4">ORIGIN</text>
               <!-- Node 2 -->
-              <circle cx="210" cy="210" r="4" fill="#1A1C23"/>
-              <text x="210" y="170" font-size="13" font-weight="500" letter-spacing="2" text-anchor="middle" fill="#B0B3B8">2024</text>
-              <text x="210" y="260" font-size="16" font-weight="600" text-anchor="middle">고촌 센트럴</text>
+              <circle cx="215" cy="180" r="5" fill="#141519"/>
+              <text x="215" y="135" font-size="12" font-weight="600" letter-spacing="2" text-anchor="middle" fill="#8E9097">2024</text>
+              <text x="215" y="225" font-size="17" font-weight="700" text-anchor="middle" fill="#141519">고촌 센트럴</text>
               <!-- Node 3 -->
-              <circle cx="400" cy="210" r="4" fill="#1A1C23"/>
-              <text x="400" y="170" font-size="13" font-weight="500" letter-spacing="2" text-anchor="middle" fill="#B0B3B8">2024</text>
-              <text x="400" y="260" font-size="16" font-weight="600" text-anchor="middle">고촌 드림</text>
+              <circle cx="400" cy="180" r="5" fill="#141519"/>
+              <text x="400" y="135" font-size="12" font-weight="600" letter-spacing="2" text-anchor="middle" fill="#8E9097">2024</text>
+              <text x="400" y="225" font-size="17" font-weight="700" text-anchor="middle" fill="#141519">고촌 드림</text>
               <!-- Node 4 -->
-              <circle cx="590" cy="210" r="4" fill="#1A1C23"/>
-              <text x="590" y="170" font-size="13" font-weight="500" letter-spacing="2" text-anchor="middle" fill="#B0B3B8">2024</text>
-              <text x="590" y="260" font-size="16" font-weight="600" text-anchor="middle">장기센터</text>
-              <!-- Node 5 -->
-              <circle cx="780" cy="210" r="5" fill="#1A1C23"/>
-              <text x="780" y="170" font-size="13" font-weight="500" letter-spacing="2" text-anchor="middle" fill="#B0B3B8">2025</text>
-              <text x="780" y="260" font-size="16" font-weight="600" text-anchor="middle">검단 연세관</text>
-              <text x="780" y="282" font-size="11" fill="#B0B3B8" text-anchor="middle" letter-spacing="1.4">LATEST</text>
+              <circle cx="585" cy="180" r="5" fill="#141519"/>
+              <text x="585" y="135" font-size="12" font-weight="600" letter-spacing="2" text-anchor="middle" fill="#8E9097">2024</text>
+              <text x="585" y="225" font-size="17" font-weight="700" text-anchor="middle" fill="#141519">장기센터</text>
+              <!-- Node 5 · Latest -->
+              <circle cx="770" cy="180" r="6" fill="#141519"/>
+              <text x="770" y="135" font-size="12" font-weight="600" letter-spacing="2" text-anchor="middle" fill="#8E9097">2025</text>
+              <text x="770" y="225" font-size="17" font-weight="700" text-anchor="middle" fill="#141519">검단 연세관</text>
+              <text x="770" y="250" font-size="10" fill="#8E9097" text-anchor="middle" letter-spacing="1.4">LATEST</text>
             </g>
           </svg>
         </div>
@@ -127,7 +144,7 @@
         <p class="spec-bar">LOCATION  ·  사우 / 고촌 / 장기 / 검단  ·  UNIFIED SPEC</p>
       </div>
 
-      <!-- ══ PAGE 06 · 700 Focus ══ -->
+      <!-- ══ PAGE 06 · Focus 700 ══ -->
       <div class="frame" id="p06">
         <p class="page-label page-label--center">04  ·  FOCUS</p>
         <p class="num-xl p06__number">700</p>
@@ -136,7 +153,7 @@
         <p class="spec-bar">700 MIN / DAY  ·  NO PHONE  ·  LOW STIMULUS</p>
       </div>
 
-      <!-- ══ PAGE 07 · Trinity (full-bleed image) ══ -->
+      <!-- ══ PAGE 07 · Trinity ══ -->
       <div class="frame" id="p07">
         <div class="p07__img img-placeholder" data-label="INTERIOR · B&amp;W"></div>
         <p class="h2 p07__headline">관찰, 조율, 개입.&#10;세 개의 층이 하루를 지탱합니다.</p>
@@ -157,49 +174,91 @@
         <p class="spec-bar">OPERATION  ·  TRINITY PROTOCOL</p>
       </div>
 
-      <!-- ══ PAGE 08 · Engine ══ -->
+      <!-- ══ PAGE 08 · Engine 160,572 ══ -->
       <div class="frame" id="p08">
         <p class="page-label page-label--center">05  ·  ENGINE</p>
+        <svg class="sb-mark sb-mark--m p08__mark" viewBox="0 0 613 543"><use href="#sb-mark"/></svg>
         <p class="num-l p08__number">160,572</p>
         <p class="h2 p08__headline">160,572건의 학습 로그.&#10;모든 결정은 데이터 위에서 이루어진다.</p>
         <p class="body p08__body">문항 단위로 축적된 반응, 시간, 오답 패턴.&#10;각 학생의 다음 한 문항은 이 데이터에서 결정됩니다.</p>
         <p class="spec-bar">ENGINE  ·  수학비서  ·  PER-STUDENT CURRICULUM</p>
       </div>
 
-      <!-- ══ PAGE 09 · GRIP INCEPTION ══ -->
+      <!-- ══ PAGE 09 · INDEX · 수학비서 엔진 ══ -->
       <div class="frame" id="p09">
-        <div class="split-img-left img-placeholder" data-label="GRIP · INCEPTION"></div>
-        <p class="split-label split-text-right">CONTENT · 01</p>
-        <p class="split-headline split-headline--pos split-text-right">개념의 골격을&#10;세운다.&#10;GRIP&#10;INCEPTION.</p>
-        <p class="split-body split-body--pos split-text-right">개념을 이해하고도 실전에서 무너지는 이유는&#10;우선순위의 결여입니다.&#10;데이터가 검증한 핵심 개념만을 논리 순서로&#10;배치했습니다.</p>
-        <p class="split-spec split-text-right">CONTENT · 01  ·  GRIP INCEPTION</p>
+        <svg class="sb-mark sb-mark--xl p09__mark" viewBox="0 0 613 543"><use href="#sb-mark"/></svg>
+        <p class="p09__sublabel">ENGINE  ·  수학비서</p>
+        <h2 class="p09__title">INDEX</h2>
+        <p class="h2 p09__headline">모든 문항은 숫자로 번역된다.</p>
+        <p class="body-lead p09__body">학생 반응이 축적한 문항 단위 난이도 지표.&#10;감각이 아니라 실측값입니다.</p>
+        <p class="spec-bar">ENGINE  ·  INDEX METRIC  ·  PER-PROBLEM DIFFICULTY</p>
       </div>
 
-      <!-- ══ PAGE 10 · GRIP PATTERN ══ -->
+      <!-- ══ PAGE 10 · INDEX Proof ══ -->
       <div class="frame" id="p10">
-        <div class="split-img-right img-placeholder" data-label="GRIP · PATTERN"></div>
-        <p class="split-label split-text-left">CONTENT · 02</p>
-        <p class="split-headline split-headline--pos split-text-left">유형을 해부한다.&#10;GRIP&#10;PATTERN.</p>
-        <p class="split-body split-body--pos split-text-left">출제 데이터가 검증한 핵심 유형만을 선별해&#10;입체적으로 분석합니다.&#10;정교한 난이도 설계로 실전 감각을 단단하게&#10;만듭니다.</p>
-        <p class="split-spec split-text-left">CONTENT · 02  ·  GRIP PATTERN</p>
+        <p class="page-label">06  ·  INDEX IN USE</p>
+        <p class="h2 p10__headline">난이도는 감이 아니라&#10;측정값이다.</p>
+        <div class="p10__book">
+          <div class="p10__book-top">
+            <svg class="sb-mark sb-mark--s" viewBox="0 0 613 543"><use href="#sb-mark"/></svg>
+            <span class="p10__book-index">INDEX <strong>50.2%</strong></span>
+          </div>
+          <div class="p10__book-pill">
+            <span class="p10__book-pill-tag">유형</span>
+            <span class="p10__book-pill-num">07</span>
+            <span class="p10__book-pill-title">이차식으로 나누었을 때의 나머지</span>
+          </div>
+          <p class="p10__book-problem">다항식 <em>f(x)</em>를 이차식으로 나누었을 때의 나머지 <em>R(x)</em>는 <em>R(x) = ax + b</em>로 둘 수 있다.</p>
+        </div>
+        <p class="caption p10__caption">수학비서 교재에 실제 인쇄되는 문항 블록.&#10;INDEX 값은 응시자 반응 데이터로 계산된 정답률이다.</p>
+        <p class="spec-bar">SOURCE  ·  수학비서 · 유형서</p>
       </div>
 
-      <!-- ══ PAGE 11 · GRIP DECODE ══ -->
+      <!-- ══ PAGE 11 · CONTENT · GRIP Series (통합) ══ -->
       <div class="frame" id="p11">
-        <div class="split-img-left img-placeholder" data-label="GRIP · DECODE"></div>
-        <p class="split-label split-text-right">CONTENT · 03</p>
-        <p class="split-headline split-headline--pos split-text-right">기출의 흐름을&#10;해독한다.&#10;GRIP&#10;DECODE.</p>
-        <p class="split-body split-body--pos split-text-right">지표 분석을 기반으로 수능과 교육청 기출의&#10;본질을 꿰뚫습니다.&#10;출제 경향의 거대한 흐름을 읽어내고&#10;다음 학년의 문항을 미리 해독합니다.</p>
-        <p class="split-spec split-text-right">CONTENT · 03  ·  GRIP DECODE</p>
+        <p class="page-label">07  ·  CONTENT  ·  GRIP SERIES</p>
+        <p class="h2 p11__headline">유형을 해부한다.&#10;데이터가 쓴 세 권의 교재.</p>
+        <div class="p11__books">
+          <div class="p11__book p11__book--inception">
+            <div class="p11__book-accent"></div>
+            <span class="p11__book-brand">GRIP · 01</span>
+            <span class="p11__book-title">INCEPTION</span>
+          </div>
+          <div class="p11__book p11__book--pattern">
+            <div class="p11__book-accent"></div>
+            <span class="p11__book-brand">GRIP · 02</span>
+            <span class="p11__book-title">PATTERN</span>
+          </div>
+          <div class="p11__book p11__book--decode">
+            <div class="p11__book-accent"></div>
+            <span class="p11__book-brand">GRIP · 03</span>
+            <span class="p11__book-title">DECODE</span>
+          </div>
+        </div>
+        <div class="p11__rows">
+          <div class="p11__row">
+            <span class="p11__row-label">GRIP · 01  ·  INCEPTION</span>
+            <span class="p11__row-text">개념의 골격을 세운다. 우선순위로 구조화된 핵심 개념서.</span>
+          </div>
+          <div class="p11__row">
+            <span class="p11__row-label">GRIP · 02  ·  PATTERN</span>
+            <span class="p11__row-text">유형을 해부한다. 출제 데이터로 검증한 핵심 유형서.</span>
+          </div>
+          <div class="p11__row">
+            <span class="p11__row-label">GRIP · 03  ·  DECODE</span>
+            <span class="p11__row-text">기출의 흐름을 해독한다. 지표 기반 기출 분석서.</span>
+          </div>
+        </div>
+        <p class="spec-bar">CONTENT  ·  GRIP SERIES  ·  3 VOLUMES</p>
       </div>
 
       <!-- ══ PAGE 12 · OBJET ══ -->
       <div class="frame" id="p12">
-        <p class="page-label page-label--center">06  ·  OBJET</p>
+        <p class="page-label page-label--center">08  ·  CONTENT  ·  OBJET</p>
         <p class="p12__brand">OBJET</p>
         <p class="h2 p12__headline">최상위권을 위한 변별 설계.</p>
         <p class="body p12__body">그립(GRIP)으로 완성된 실전 위에&#10;마지막 한 칸을 올려놓는 극비의 시리즈.</p>
-        <div class="spec-stack">
+        <div class="spec-stack p12__stack">
           <div class="spec-stack__row"><span>SERIES</span><span>CONTENT · 04</span></div>
           <div class="spec-stack__row"><span>TITLE</span><span>OBJET</span></div>
           <div class="spec-stack__row"><span>RELEASE</span><span>2026 · 11</span></div>
@@ -208,7 +267,7 @@
 
       <!-- ══ PAGE 13 · Evidence ══ -->
       <div class="frame" id="p13">
-        <p class="page-label page-label--center">07  ·  EVIDENCE</p>
+        <p class="page-label page-label--center">09  ·  EVIDENCE</p>
         <div class="p13__blocks">
           <div class="p13__block">
             <p class="p13__num">3 → 1,000</p>
@@ -228,63 +287,120 @@
 
       <!-- ══ PAGE 14 · System Map ══ -->
       <div class="frame" id="p14">
-        <p class="page-label">08  ·  ECOSYSTEM</p>
+        <p class="page-label">10  ·  ECOSYSTEM</p>
         <p class="h2 p14__headline">지점을 늘리는 것이 아니라,&#10;체계를 그대로 이식한다.</p>
         <p class="body p14__body">각인은 네 개의 레이어로 구성된 하나의 운영 체계입니다.&#10;아래는 그 구조를 펼친 내부 규격입니다.</p>
         <div class="p14__map">
           <div class="p14__node">
             <span class="p14__node-label">ENGINE</span>
-            <span class="p14__node-value">수학비서  —  학습 데이터 · 초개인화</span>
+            <span class="p14__node-value"><em>수학비서</em>  —  학습 데이터 · 초개인화</span>
+            <span class="p14__node-mark"><svg class="sb-mark sb-mark--s" viewBox="0 0 613 543"><use href="#sb-mark"/></svg></span>
           </div>
           <div class="p14__node">
             <span class="p14__node-label">CONTENT</span>
             <span class="p14__node-value">GRIP  ·  OBJET  ·  커널하우스</span>
+            <span class="p14__node-mark"></span>
           </div>
           <div class="p14__node">
             <span class="p14__node-label">OPERATION</span>
             <span class="p14__node-value">Trinity Protocol  —  관찰 · 조율 · 개입</span>
+            <span class="p14__node-mark"></span>
           </div>
           <div class="p14__node">
             <span class="p14__node-label">NETWORK</span>
             <span class="p14__node-value">teacher.kernelhouse  —  교사 커뮤니티</span>
+            <span class="p14__node-mark"></span>
           </div>
         </div>
         <p class="spec-bar">ECOSYSTEM  ·  4 LAYERS  ·  UNIFIED OPERATION</p>
       </div>
 
-      <!-- ══ PAGE 15 · Location ══ -->
+      <!-- ══ PAGE 15 · Location (split) ══ -->
       <div class="frame" id="p15">
         <div class="split-img-right img-placeholder" data-label="BRANCH · EXTERIOR"></div>
-        <p class="split-label split-text-left">09  ·  LOCATION</p>
-        <p class="split-headline split-headline--pos split-text-left">지역에 심은 거점,&#10;지표로 관리되는&#10;공간.</p>
-        <p class="split-body split-body--pos split-text-left">검증된 운영 기준을 지역 거점에 그대로&#10;이식했습니다.&#10;프리미엄의 기준이 아니라,&#10;운영의 기준입니다.</p>
+        <p class="split-label split-text-left">11  ·  LOCATION</p>
+        <p class="split-headline split-text-left">지역에 심은 거점,&#10;지표로 관리되는 공간.</p>
+        <p class="body split-body split-text-left">검증된 운영 기준을 지역 거점에&#10;그대로 이식했습니다.&#10;프리미엄의 기준이 아니라,&#10;운영의 기준입니다.</p>
         <p class="split-spec split-text-left">LOCATION  ·  사우 · 고촌 · 장기 · 검단</p>
       </div>
 
-      <!-- ══ PAGE 16 · Content Layer ══ -->
+      <!-- ══ PAGE 16 · Publishing (split) ══ -->
       <div class="frame" id="p16">
         <div class="split-img-left img-placeholder" data-label="BOOK · EDGE"></div>
-        <p class="split-label split-text-right">10  ·  CONTENT LAYER</p>
-        <p class="split-headline split-headline--pos split-text-right">감이 아니라 데이터.&#10;기술과 디자인으로&#10;쓴다.</p>
-        <p class="split-body split-body--pos split-text-right">커널하우스와 자체 연구진의 결합.&#10;막연한 감각을 배제하고&#10;지표 위에서 교재를 설계합니다.</p>
+        <p class="split-label split-text-right">12  ·  PUBLISHING</p>
+        <p class="split-headline split-text-right">감이 아니라 데이터.&#10;기술과 디자인으로 쓴다.</p>
+        <p class="body split-body split-text-right">커널하우스와 자체 연구진의 결합.&#10;막연한 감각을 배제하고&#10;지표 위에서 교재를 설계합니다.</p>
         <p class="split-spec split-text-right">PUBLISHING  ·  커널하우스  ·  DATA-DRIVEN</p>
       </div>
 
-      <!-- ══ PAGE 17 · Vision ══ -->
+      <!-- ══ PAGE 17 · Horizon ══ -->
       <div class="frame" id="p17">
-        <p class="page-label page-label--center">11  ·  HORIZON</p>
+        <p class="page-label page-label--center">13  ·  HORIZON</p>
         <p class="p17__headline">거점을 넘어,&#10;기준이 되는 플랫폼으로.</p>
-        <p class="body p17__body">온라인과 오프라인, 데이터와 공간.&#10;네 개의 레이어가 하나의 리듬으로 움직이는 교육 체계.&#10;각인이 향하는 다음 자리입니다.</p>
+        <p class="body-lead p17__body">온라인과 오프라인, 데이터와 공간.&#10;네 개의 레이어가 하나의 리듬으로 움직이는 교육 체계.&#10;각인이 향하는 다음 자리입니다.</p>
         <p class="spec-bar">HORIZON  ·  2026 — 2028</p>
       </div>
 
-      <!-- ══ PAGE 18 · Closing ══ -->
+      <!-- ══ PAGE 18 · Closing Mark ══ -->
       <div class="frame" id="p18">
-        <p class="page-label page-label--center">12  ·  MARK</p>
+        <p class="page-label page-label--center">14  ·  MARK</p>
         <p class="p18__mark">각인학원.&#10;결과로 증명한다.</p>
         <div class="p18__rule"></div>
         <p class="p18__sub">사우본원  ·  장기센터  ·  고촌 센트럴 / 드림  ·  검단 연세관</p>
         <p class="p18__foot">GAKIN ACADEMY  ·  BRAND REPORT 2026</p>
+      </div>
+
+      <!-- ══ PAGE 19 · Colophon ══ -->
+      <div class="frame" id="p19">
+        <p class="p19__subtitle">COLOPHON</p>
+        <h2 class="p19__title">판권</h2>
+        <div class="p19__grid">
+          <div class="p19__row">
+            <span class="p19__row-label">TITLE</span>
+            <span class="p19__row-value">각인학원 브랜드 리포트 2026</span>
+          </div>
+          <div class="p19__row">
+            <span class="p19__row-label">ISSUED</span>
+            <span class="p19__row-value">2026 · Q2</span>
+          </div>
+          <div class="p19__row">
+            <span class="p19__row-label">PUBLISHER</span>
+            <span class="p19__row-value">각인학원</span>
+          </div>
+          <div class="p19__row">
+            <span class="p19__row-label">BRANCHES</span>
+            <span class="p19__row-value">사우본원  ·  고촌 센트럴관  ·  고촌 드림관&#10;장기센터  ·  검단 연세관</span>
+          </div>
+          <div class="p19__row">
+            <span class="p19__row-label">ENGINE</span>
+            <span class="p19__row-value">수학비서  —  per-student curriculum</span>
+          </div>
+          <div class="p19__row">
+            <span class="p19__row-label">CONTENT</span>
+            <span class="p19__row-value">GRIP Series  ·  OBJET  ·  커널하우스 출판</span>
+          </div>
+          <div class="p19__row">
+            <span class="p19__row-label">TYPEFACE</span>
+            <span class="p19__row-value">Pretendard</span>
+          </div>
+          <div class="p19__row">
+            <span class="p19__row-label">EDITION</span>
+            <span class="p19__row-value">v1.0 / 내부 배포용</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ PAGE 20 · Back Cover ══ -->
+      <div class="frame" id="p20">
+        <div class="p20__inner">
+          <p class="p20__brand">각인</p>
+          <div class="p20__rule"></div>
+          <div class="p20__engine">
+            <span class="p20__engine-label">Powered by</span>
+            <svg class="sb-mark sb-mark--l" viewBox="0 0 613 543"><use href="#sb-mark"/></svg>
+          </div>
+        </div>
+        <p class="p20__foot">© 2026 GAKIN ACADEMY  ·  ALL RIGHTS RESERVED</p>
       </div>
 
     </div><!-- /scale-wrapper -->

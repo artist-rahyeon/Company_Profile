@@ -1,5 +1,5 @@
 const FRAME_W = 1080;
-const FRAME_H = 1920;
+const FRAME_H = 1527;
 
 function applyScale() {
   const vw = window.innerWidth;

@@ -1,4 +1,6 @@
-/* ── Scroll Container ── */
+/* ══════════════════════════════════════════
+   Scroll Container
+══════════════════════════════════════════ */
 .scroll-container {
   width: 100vw;
   height: 100vh;
@@ -7,7 +9,6 @@
   scroll-behavior: smooth;
 }
 
-/* ── Scale Wrapper ── */
 .scale-wrapper {
   display: flex;
   flex-direction: column;
@@ -15,7 +16,10 @@
   transform-origin: top center;
 }
 
-/* ── Frame Base · 모든 페이지 공통 ── */
+
+/* ══════════════════════════════════════════
+   Frame · A4 세로 (1080 × 1527)
+══════════════════════════════════════════ */
 .frame {
   width: var(--frame-w);
   height: var(--frame-h);
@@ -27,7 +31,10 @@
   transition: background-color 240ms ease;
 }
 
-/* ── Image Placeholder · 십자선 + 라벨 ── */
+
+/* ══════════════════════════════════════════
+   Image placeholder · 십자선 + 라벨
+══════════════════════════════════════════ */
 .img-placeholder {
   position: relative;
   overflow: hidden;
@@ -35,7 +42,7 @@
   background-image:
     linear-gradient(var(--silver), var(--silver)),
     linear-gradient(var(--silver), var(--silver));
-  background-size: 56px 1px, 1px 56px;
+  background-size: 48px 1px, 1px 48px;
   background-position: center center, center center;
   background-repeat: no-repeat, no-repeat;
 }
@@ -43,17 +50,20 @@
 .img-placeholder::after {
   content: attr(data-label);
   position: absolute;
-  top: 24px;
-  left: 24px;
+  top: 20px;
+  left: 20px;
   font-family: var(--font-base);
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 11px;
+  font-weight: 600;
   letter-spacing: 0.22em;
-  color: var(--silver);
+  color: var(--ink-50);
   text-transform: uppercase;
 }
 
-/* ── Theme Toggle · WARM / NEUTRAL 비교용 ── */
+
+/* ══════════════════════════════════════════
+   Theme toggle · Warm / Neutral 비교용
+══════════════════════════════════════════ */
 .theme-toggle {
   position: fixed;
   top: 24px;
@@ -61,34 +71,36 @@
   z-index: 1001;
   display: flex;
   gap: 1px;
-  padding: 3px;
-  background: rgba(26, 28, 35, 0.04);
+  padding: 4px;
+  background: rgba(20, 21, 25, 0.04);
+  border: 1px solid var(--rule);
 }
 
 .theme-toggle button {
   background: transparent;
   border: none;
-  padding: 7px 14px;
+  padding: 8px 16px;
   font-family: var(--font-base);
-  font-size: 10px;
-  font-weight: 500;
+  font-size: 11px;
+  font-weight: 600;
   letter-spacing: 0.22em;
-  color: var(--ink-40);
+  color: var(--ink-50);
   cursor: pointer;
   text-transform: uppercase;
   transition: color 200ms ease, background-color 200ms ease;
 }
 
-.theme-toggle button:hover {
-  color: var(--ink-60);
-}
+.theme-toggle button:hover { color: var(--ink); }
 
 .theme-toggle button.active {
   color: var(--ink);
-  background: rgba(26, 28, 35, 0.06);
+  background: rgba(20, 21, 25, 0.06);
 }
 
-/* ── Page Indicator ── */
+
+/* ══════════════════════════════════════════
+   Page indicator
+══════════════════════════════════════════ */
 .page-indicator {
   position: fixed;
   right: 32px;
@@ -96,7 +108,7 @@
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   z-index: 999;
 }
 
@@ -111,4 +123,58 @@
 .dot.active {
   opacity: 1;
   height: 20px;
+}
+
+
+/* ══════════════════════════════════════════
+   Print / PDF output
+   - 스크롤 · 스냅 · 토글 · 인디케이터 숨김
+   - 배경색 강제 출력
+   - 페이지 브레이크 프레임 단위
+══════════════════════════════════════════ */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html, body {
+    width: 210mm;
+    height: 297mm;
+    overflow: visible;
+    background: var(--paper);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .theme-toggle,
+  .page-indicator {
+    display: none !important;
+  }
+
+  .scroll-container {
+    width: auto;
+    height: auto;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  .scale-wrapper {
+    transform: none !important;
+    margin-top: 0 !important;
+    display: block;
+  }
+
+  .frame {
+    width: 210mm;
+    height: 297mm;
+    page-break-after: always;
+    break-after: page;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .frame:last-child {
+    page-break-after: auto;
+  }
 }

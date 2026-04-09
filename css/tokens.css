@@ -1,26 +1,33 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 
 :root {
-  /* ─ Paper (background) · toggleable ─ */
+  /* ══ PAPER (background) · toggleable ══ */
   --paper-warm:    #F6F5F2;   /* Aesop / Kinfolk 계열 웜 크림 */
   --paper-neutral: #FAFAFA;   /* 뉴트럴 오프화이트 */
   --paper:         var(--paper-warm);
-
-  /* ─ Ink ─ */
-  --ink:           #1A1C23;
-  --ink-60:        rgba(26, 28, 35, 0.55);
-  --ink-40:        rgba(26, 28, 35, 0.35);
-  --silver:        #B0B3B8;
   --paper-shadow:  #EAE8E3;
 
-  /* ─ Frame ─ */
-  --frame-w:   1080px;
-  --frame-h:   1920px;
-  --margin-x:  140px;
-  --margin-y:  200px;
-  --gutter:    24px;
+  /* ══ INK (text) · print-safe ══ */
+  --ink:     #141519;                        /* 본문 100% */
+  --ink-85:  rgba(20, 21, 25, 0.88);         /* 부속 본문 */
+  --ink-70:  rgba(20, 21, 25, 0.72);         /* 캡션 */
+  --ink-50:  rgba(20, 21, 25, 0.52);         /* 라벨 대문자 전용 */
+  --rule:    rgba(20, 21, 25, 0.18);         /* 구분선 */
+  --silver:  #8E9097;                        /* 십자선 플레이스홀더 전용 */
 
-  /* ─ Font ─ */
+  /* ══ ACCENT · 수학비서 INDEX blue ══ */
+  --index-blue:      #2048FF;
+  --index-blue-soft: rgba(32, 72, 255, 0.08);
+
+  /* ══ FRAME · A4 세로 비율 (1 : 1.414) ══ */
+  --frame-w:   1080px;
+  --frame-h:   1527px;
+  --margin-x:  120px;
+  --margin-y:  140px;
+  --gutter:    24px;
+  --bleed:     12px;
+
+  /* ══ FONT ══ */
   --font-base: 'Pretendard', 'Noto Sans KR', sans-serif;
 }
 
@@ -28,140 +35,201 @@ body.theme-neutral {
   --paper: var(--paper-neutral);
 }
 
+
 /* ══════════════════════════════════════════
-   Typography scale
+   Typography scale · Print-safe
+   - 본문은 모두 weight 500 이상
+   - 본문 색은 --ink (100%) 고정
+   - 얇은 weight 300 사용 금지
 ══════════════════════════════════════════ */
+
+.display {
+  font-family: var(--font-base);
+  font-size: 128px;
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.045em;
+  color: var(--ink);
+  word-break: keep-all;
+}
+
 .h1 {
   font-family: var(--font-base);
-  font-size: 92px;
+  font-size: 64px;
   font-weight: 800;
-  line-height: 1.22;
-  letter-spacing: -0.035em;
+  line-height: 1.28;
+  letter-spacing: -0.028em;
+  color: var(--ink);
   word-break: keep-all;
   white-space: pre-line;
 }
 
 .h2 {
   font-family: var(--font-base);
-  font-size: 52px;
+  font-size: 44px;
   font-weight: 700;
-  line-height: 1.35;
+  line-height: 1.32;
   letter-spacing: -0.022em;
+  color: var(--ink);
+  word-break: keep-all;
+  white-space: pre-line;
+}
+
+.h3 {
+  font-family: var(--font-base);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+  word-break: keep-all;
+  white-space: pre-line;
+}
+
+.body-lead {
+  font-family: var(--font-base);
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+  color: var(--ink);
   word-break: keep-all;
   white-space: pre-line;
 }
 
 .body {
   font-family: var(--font-base);
-  font-size: 26px;
-  font-weight: 300;
-  line-height: 1.9;
-  letter-spacing: 0;
-  word-break: keep-all;
-  white-space: pre-line;
-}
-
-.body-long {
-  font-family: var(--font-base);
-  font-size: 24px;
-  font-weight: 300;
-  line-height: 1.95;
-  letter-spacing: 0;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.65;
+  letter-spacing: -0.003em;
+  color: var(--ink);
   word-break: keep-all;
   white-space: pre-line;
 }
 
 .caption {
   font-family: var(--font-base);
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 1.5;
-  letter-spacing: 0.08em;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.55;
+  letter-spacing: 0.005em;
+  color: var(--ink-70);
   word-break: keep-all;
 }
 
 .label {
   font-family: var(--font-base);
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 600;
   line-height: 1.5;
-  letter-spacing: 0.22em;
-  color: var(--silver);
+  letter-spacing: 0.24em;
+  color: var(--ink-50);
   text-transform: uppercase;
 }
 
 .num-xl {
   font-family: var(--font-base);
-  font-size: 360px;
+  font-size: 260px;
   font-weight: 800;
   line-height: 0.95;
   letter-spacing: -0.045em;
+  color: var(--ink);
 }
 
 .num-l {
   font-family: var(--font-base);
-  font-size: 200px;
+  font-size: 180px;
   font-weight: 800;
   line-height: 0.95;
   letter-spacing: -0.035em;
+  color: var(--ink);
 }
 
-/* ══════════════════════════════════════════
-   Split layout shared · P09 · P10 · P11 · P15
-══════════════════════════════════════════ */
-.split-headline {
+.num-m {
   font-family: var(--font-base);
-  font-size: 42px;
+  font-size: 120px;
   font-weight: 800;
-  line-height: 1.32;
-  letter-spacing: -0.025em;
-  word-break: keep-all;
-  white-space: pre-line;
+  line-height: 0.95;
+  letter-spacing: -0.028em;
   color: var(--ink);
 }
 
-.split-body {
-  font-family: var(--font-base);
-  font-size: 22px;
-  font-weight: 300;
-  line-height: 1.9;
-  letter-spacing: 0;
-  word-break: keep-all;
-  white-space: pre-line;
-  color: var(--ink);
-}
 
 /* ══════════════════════════════════════════
-   Spec bar · 페이지 하단 스펙 시트
+   Page label (공통 상단 라벨)
+══════════════════════════════════════════ */
+.page-label {
+  position: absolute;
+  top: var(--margin-y);
+  left: var(--margin-x);
+  font-family: var(--font-base);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  color: var(--ink-50);
+  text-transform: uppercase;
+}
+
+.page-label--center {
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.page-label--right {
+  left: auto;
+  right: var(--margin-x);
+}
+
+.page-num {
+  position: absolute;
+  bottom: 72px;
+  right: var(--margin-x);
+  font-family: var(--font-base);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--ink-50);
+  text-transform: uppercase;
+}
+
+
+/* ══════════════════════════════════════════
+   Spec bar · 페이지 하단 규격 시트
 ══════════════════════════════════════════ */
 .spec-bar {
   position: absolute;
   left: var(--margin-x);
   right: var(--margin-x);
   bottom: var(--margin-y);
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
   font-family: var(--font-base);
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 600;
   letter-spacing: 0.2em;
-  color: var(--ink-60);
+  color: var(--ink-70);
   text-align: center;
   text-transform: uppercase;
 }
 
-.spec-bar--split {
+.spec-bar--left {
   text-align: left;
 }
 
-/* 중앙 정렬 스펙시트 블록 · P12 · P16 */
+
+/* ══════════════════════════════════════════
+   Spec stack · 중앙 규격 블록 (P12 OBJET 등)
+══════════════════════════════════════════ */
 .spec-stack {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 240px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 18px;
+  gap: 16px;
 }
 
 .spec-stack__row {
@@ -171,20 +239,36 @@ body.theme-neutral {
   width: 480px;
   font-family: var(--font-base);
   text-align: left;
-  align-items: center;
+  align-items: baseline;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--rule);
 }
 
 .spec-stack__row span:first-child {
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 600;
   letter-spacing: 0.24em;
-  color: var(--silver);
+  color: var(--ink-50);
   text-transform: uppercase;
 }
 
 .spec-stack__row span:last-child {
   font-size: 20px;
-  font-weight: 400;
-  letter-spacing: 0.02em;
+  font-weight: 600;
+  letter-spacing: -0.005em;
   color: var(--ink);
 }
+
+
+/* ══════════════════════════════════════════
+   Sugakbisseo mark · reusable
+   SVG viewBox 613 × 543 (aspect 1.129)
+══════════════════════════════════════════ */
+.sb-mark {
+  display: block;
+}
+
+.sb-mark--xl { width: 226px; height: 200px; }
+.sb-mark--l  { width: 108px; height: 96px;  }
+.sb-mark--m  { width: 54px;  height: 48px;  }
+.sb-mark--s  { width: 32px;  height: 28px;  }
