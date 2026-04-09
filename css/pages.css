@@ -693,14 +693,14 @@
 ════════════════════════════════════════ */
 #p18 {
   background: var(--offwhite);
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
 }
 
 .p18__headline {
-  position: absolute;
-  top: 1520px;
-  left: 0;
-  right: 0;
   text-align: center;
   color: var(--midnight);
   white-space: pre-line;
@@ -708,10 +708,6 @@
 }
 
 .p18__sub {
-  position: absolute;
-  top: 1760px;
-  left: 0;
-  right: 0;
   text-align: center;
   color: var(--silver);
   font-family: var(--font-base);
