@@ -1,14 +1,161 @@
-/* ════════════════════════════════════════
-   PAGES · 20-page print edition
+/* ══════════════════════════════════════════
+   PAGES · 22-page Company Profile
    Frame 1080 × 1527 (A4 portrait)
    Safe zone: x 120~960, y 140~1387
-══════════════════════════════════════════ */
+   ══════════════════════════════════════════ */
 
 
-/* ════════════════════════════════════════
-   PAGE 01 · Cover
-══════════════════════════════════════════ */
+/* ══════════════════════════════════════════
+   Shared · Section header
+   eng eyebrow → title → section-rule → sub
+   Applied to P02 ~ P21 (excl. P01 / P22 covers)
+   ══════════════════════════════════════════ */
+.p02__eng, .p03__eng, .p04__eng, .p05__eng, .p06__eng, .p07__eng, .p08__eng,
+.p09__eng, .p10__eng, .p11__eng, .p12__eng, .p13__eng, .p14__eng, .p19__eng,
+.p20__eng, .p21__eng, .branch__eng {
+  position: absolute;
+  top: 240px;
+  left: var(--margin-x);
+  font-family: var(--font-base);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  color: var(--ink-50);
+  text-transform: uppercase;
+}
+
+.p02__title, .p03__title, .p04__title, .p05__title, .p06__title, .p07__title,
+.p08__title, .p09__title, .p10__title, .p11__title, .p12__title, .p13__title,
+.p14__title, .p19__title, .p20__title, .p21__title, .branch__title {
+  position: absolute;
+  top: 278px;
+  left: var(--margin-x);
+  font-family: var(--font-base);
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.section-rule {
+  position: absolute;
+  top: 392px;
+  left: var(--margin-x);
+  width: 48px;
+  height: 1px;
+  background: var(--ink);
+  opacity: 0.4;
+}
+
+.p02__sub, .p03__sub, .p04__sub, .p05__sub, .p06__sub, .p07__sub, .p08__sub,
+.p09__sub, .p10__sub, .p11__sub, .p12__sub, .p13__sub, .p14__sub, .p19__sub,
+.p20__sub, .p21__sub, .branch__sub {
+  position: absolute;
+  top: 416px;
+  left: var(--margin-x);
+  font-family: var(--font-base);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--ink-70);
+}
+
+
+/* ══════════════════════════════════════════
+   Shared · info-table
+   label 200px / value 1fr — thin rules
+   ══════════════════════════════════════════ */
+.info-table {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--rule);
+}
+
+.info-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  align-items: baseline;
+  gap: 32px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.info-row__label {
+  font-family: var(--font-base);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  color: var(--ink-50);
+  text-transform: uppercase;
+}
+
+.info-row__value {
+  font-family: var(--font-base);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  word-break: keep-all;
+}
+
+
+/* ══════════════════════════════════════════
+   Shared · step-grid (2x2 cards)
+   Used on P09 · P13 · P20
+   ══════════════════════════════════════════ */
+.step-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.step-card {
+  padding: 30px 32px 34px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  min-height: 252px;
+  display: flex;
+  flex-direction: column;
+}
+
+.step-card__num {
+  font-family: var(--font-base);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  color: var(--index-blue);
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.step-card__title {
+  font-family: var(--font-base);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+  margin-bottom: 14px;
+  word-break: keep-all;
+}
+
+.step-card__body {
+  font-family: var(--font-base);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.65;
+  letter-spacing: -0.003em;
+  color: var(--ink-85);
+  word-break: keep-all;
+}
+
+
+/* ══════════════════════════════════════════
+   PAGE 01 · COVER (dark)
+   ══════════════════════════════════════════ */
 #p01 {
+  background: #141519;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,29 +170,29 @@
 .p01__eyebrow {
   font-family: var(--font-base);
   font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.32em;
-  color: var(--ink-50);
+  font-weight: 700;
+  letter-spacing: 0.36em;
+  color: rgba(246, 245, 242, 0.58);
   text-transform: uppercase;
-  margin-bottom: 80px;
+  margin-bottom: 76px;
 }
 
 .p01__title {
-  font-size: 128px;
+  font-family: var(--font-base);
+  font-size: 148px;
   font-weight: 800;
   line-height: 1;
-  letter-spacing: -0.045em;
-  color: var(--ink);
+  letter-spacing: -0.04em;
+  color: #F6F5F2;
   text-align: center;
-  margin-bottom: 44px;
+  margin-bottom: 52px;
 }
 
 .p01__rule {
-  width: 48px;
+  width: 64px;
   height: 1px;
-  background: var(--ink);
-  opacity: 0.4;
-  margin-bottom: 36px;
+  background: rgba(246, 245, 242, 0.42);
+  margin-bottom: 40px;
 }
 
 .p01__sub {
@@ -53,7 +200,7 @@
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 0.02em;
-  color: var(--ink-85);
+  color: rgba(246, 245, 242, 0.82);
   text-align: center;
 }
 
@@ -61,985 +208,945 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 100px;
+  bottom: 92px;
   text-align: center;
   font-family: var(--font-base);
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.32em;
-  color: var(--ink-50);
+  font-weight: 700;
+  letter-spacing: 0.34em;
+  color: rgba(246, 245, 242, 0.55);
   text-transform: uppercase;
 }
 
 
-/* ════════════════════════════════════════
-   PAGE 02 · Index
-══════════════════════════════════════════ */
-.p02__rule {
+/* ══════════════════════════════════════════
+   PAGE 02 · INDEX (CONTENTS)
+   ══════════════════════════════════════════ */
+.p02__cols {
   position: absolute;
+  top: 508px;
   left: var(--margin-x);
-  top: 300px;
-  bottom: 260px;
-  width: 1px;
-  background: var(--ink);
-  opacity: 0.2;
+  right: var(--margin-x);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+}
+
+.p02__col {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.p02__group-label {
+  font-family: var(--font-base);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: var(--index-blue);
+  text-transform: uppercase;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 20px;
 }
 
 .p02__list {
-  position: absolute;
-  top: 300px;
-  left: 220px;
-  right: var(--margin-x);
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
   list-style: none;
-}
-
-.p02__item {
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: 40px;
-  align-items: baseline;
-}
-
-.p02__idx {
-  font-family: var(--font-base);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  color: var(--ink-50);
-}
-
-.p02__title {
-  font-family: var(--font-base);
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 1.3;
-  letter-spacing: -0.015em;
-  color: var(--ink);
-}
-
-
-/* ════════════════════════════════════════
-   PAGE 03 · Philosophy Manifesto
-══════════════════════════════════════════ */
-.p03__headline {
-  position: absolute;
-  top: 320px;
-  left: var(--margin-x);
-  right: var(--margin-x);
-  font-size: 64px;
-  font-weight: 800;
-  line-height: 1.28;
-  letter-spacing: -0.028em;
-  color: var(--ink);
-  white-space: pre-line;
-  word-break: keep-all;
-}
-
-.p03__body {
-  position: absolute;
-  top: 900px;
-  left: var(--margin-x);
-  right: var(--margin-x);
-}
-
-
-/* ════════════════════════════════════════
-   PAGE 04 · Trajectory · Timeline
-══════════════════════════════════════════ */
-.p04__headline {
-  position: absolute;
-  top: 280px;
-  left: var(--margin-x);
-  right: var(--margin-x);
-}
-
-.p04__body {
-  position: absolute;
-  top: 500px;
-  left: var(--margin-x);
-  right: var(--margin-x);
-}
-
-.p04__timeline {
-  position: absolute;
-  top: 780px;
-  left: var(--margin-x);
-  right: var(--margin-x);
-  height: 360px;
-}
-
-.p04__timeline svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-
-/* ════════════════════════════════════════
-   PAGE 05 · Space
-══════════════════════════════════════════ */
-.p05__images {
-  position: absolute;
-  top: 280px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  gap: 28px;
-}
-
-.p05__img {
-  width: 260px;
-  height: 340px;
-  flex-shrink: 0;
-}
-
-.p05__headline {
-  position: absolute;
-  top: 720px;
-  left: var(--margin-x);
-  right: var(--margin-x);
-}
-
-.p05__body {
-  position: absolute;
-  top: 920px;
-  left: var(--margin-x);
-  right: var(--margin-x);
-}
-
-
-/* ════════════════════════════════════════
-   PAGE 06 · Focus 700
-══════════════════════════════════════════ */
-.p06__number {
-  position: absolute;
-  top: 280px;
-  left: 0;
-  right: 0;
-  text-align: center;
-}
-
-.p06__headline {
-  position: absolute;
-  top: 700px;
-  left: 0;
-  right: 0;
-  text-align: center;
-}
-
-.p06__body {
-  position: absolute;
-  top: 920px;
-  left: var(--margin-x);
-  right: var(--margin-x);
-  text-align: center;
-}
-
-
-/* ════════════════════════════════════════
-   PAGE 07 · Trinity (full-bleed)
-══════════════════════════════════════════ */
-.p07__img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1080px;
-  height: 760px;
-}
-
-.p07__headline {
-  position: absolute;
-  top: 860px;
-  left: var(--margin-x);
-  right: var(--margin-x);
-}
-
-.p07__rows {
-  position: absolute;
-  top: 1080px;
-  left: var(--margin-x);
-  right: var(--margin-x);
   display: flex;
   flex-direction: column;
-}
-
-.p07__row {
-  display: grid;
-  grid-template-columns: 160px 1fr;
-  gap: 40px;
-  padding: 18px 0;
-  border-top: 1px solid var(--rule);
-  align-items: baseline;
-}
-
-.p07__row:last-child {
-  border-bottom: 1px solid var(--rule);
-}
-
-.p07__row-label {
-  font-family: var(--font-base);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.26em;
-  color: var(--ink-50);
-  text-transform: uppercase;
-}
-
-.p07__row-text {
-  font-family: var(--font-base);
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: -0.005em;
-  color: var(--ink);
-  word-break: keep-all;
-}
-
-
-/* ════════════════════════════════════════
-   PAGE 08 · Engine 160,572
-══════════════════════════════════════════ */
-.p08__mark {
-  position: absolute;
-  top: 260px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.p08__number {
-  position: absolute;
-  top: 440px;
-  left: 0;
-  right: 0;
-  text-align: center;
-}
-
-.p08__headline {
-  position: absolute;
-  top: 740px;
-  left: var(--margin-x);
-  right: var(--margin-x);
-  text-align: center;
-}
-
-.p08__body {
-  position: absolute;
-  top: 900px;
-  left: var(--margin-x);
-  right: var(--margin-x);
-  text-align: center;
-}
-
-
-/* ════════════════════════════════════════
-   PAGE 09 · INDEX · Sugakbisseo Engine
-══════════════════════════════════════════ */
-.p09__mark {
-  position: absolute;
-  top: 240px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.p09__sublabel {
-  position: absolute;
-  top: 500px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-family: var(--font-base);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.28em;
-  color: var(--index-blue);
-  text-transform: uppercase;
-}
-
-.p09__title {
-  position: absolute;
-  top: 560px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 128px;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.04em;
-  color: var(--ink);
-}
-
-.p09__headline {
-  position: absolute;
-  top: 820px;
-  left: var(--margin-x);
-  right: var(--margin-x);
-  text-align: center;
-}
-
-.p09__body {
-  position: absolute;
-  top: 1000px;
-  left: var(--margin-x);
-  right: var(--margin-x);
-  text-align: center;
-}
-
-
-/* ════════════════════════════════════════
-   PAGE 10 · INDEX · Book evidence
-══════════════════════════════════════════ */
-.p10__headline {
-  position: absolute;
-  top: 280px;
-  left: var(--margin-x);
-  right: var(--margin-x);
-}
-
-.p10__book {
-  position: absolute;
-  top: 520px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 720px;
-  min-height: 420px;
-  background: #FFFFFF;
-  border: 1px solid var(--rule);
-  padding: 44px 48px 52px 48px;
-  box-shadow: 0 24px 60px rgba(20, 21, 25, 0.08);
-}
-
-.p10__book-top {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 10px;
-  margin-bottom: 22px;
-}
-
-.p10__book-index {
-  font-family: var(--font-base);
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: var(--ink);
-}
-
-.p10__book-index strong {
-  font-weight: 800;
-  letter-spacing: 0.02em;
-}
-
-.p10__book-pill {
-  display: inline-flex;
-  align-items: center;
   gap: 14px;
-  padding: 14px 26px 14px 20px;
-  background: #ECE6F5;
-  border-radius: 4px;
-  margin-bottom: 32px;
 }
 
-.p10__book-pill-tag {
-  font-family: var(--font-base);
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: #6B4A8F;
-  background: #FFFFFF;
-  padding: 4px 12px;
-  border-radius: 3px;
-}
-
-.p10__book-pill-num {
-  font-family: var(--font-base);
-  font-size: 24px;
-  font-weight: 800;
-  color: #FFFFFF;
-  background: #B3A6CF;
-  padding: 2px 14px;
-  border-radius: 3px;
-  letter-spacing: -0.01em;
-}
-
-.p10__book-pill-title {
-  font-family: var(--font-base);
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--ink);
-  letter-spacing: -0.01em;
-}
-
-.p10__book-problem {
-  font-family: var(--font-base);
-  font-size: 19px;
-  font-weight: 500;
-  line-height: 1.7;
-  letter-spacing: -0.005em;
-  color: var(--ink);
-  word-break: keep-all;
-}
-
-.p10__book-problem em {
-  font-style: italic;
-  font-weight: 600;
-}
-
-.p10__caption {
-  position: absolute;
-  top: 1040px;
-  left: var(--margin-x);
-  right: var(--margin-x);
-  text-align: center;
-}
-
-
-/* ════════════════════════════════════════
-   PAGE 11 · CONTENT · GRIP Series (통합)
-══════════════════════════════════════════ */
-.p11__headline {
-  position: absolute;
-  top: 280px;
-  left: var(--margin-x);
-  right: var(--margin-x);
-}
-
-.p11__books {
-  position: absolute;
-  top: 520px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-}
-
-.p11__book {
-  width: 232px;
-  height: 330px;
-  position: relative;
-  background: #FFFFFF;
-  border: 1px solid var(--rule);
-  box-shadow: 0 18px 40px rgba(20, 21, 25, 0.08);
-  padding: 40px 26px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.p11__book-brand {
-  font-family: var(--font-base);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.24em;
-  color: var(--ink-50);
-  text-transform: uppercase;
-}
-
-.p11__book-title {
-  font-family: var(--font-base);
-  font-size: 32px;
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-}
-
-.p11__book--inception .p11__book-accent { background: #1A1C23; }
-.p11__book--pattern   .p11__book-accent { background: #C8322C; }
-.p11__book--decode    .p11__book-accent { background: #2048FF; }
-
-.p11__book-accent {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 18px;
-  height: 60px;
-}
-
-.p11__rows {
-  position: absolute;
-  top: 920px;
-  left: var(--margin-x);
-  right: var(--margin-x);
-}
-
-.p11__row {
+.p02__list li {
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 40px;
-  padding: 16px 0;
-  border-top: 1px solid var(--rule);
+  grid-template-columns: 44px 1fr;
   align-items: baseline;
-}
-
-.p11__row:last-child {
-  border-bottom: 1px solid var(--rule);
-}
-
-.p11__row-label {
-  font-family: var(--font-base);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  color: var(--ink-50);
-  text-transform: uppercase;
-}
-
-.p11__row-text {
-  font-family: var(--font-base);
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: -0.005em;
-  color: var(--ink);
-}
-
-
-/* ════════════════════════════════════════
-   PAGE 12 · OBJET
-══════════════════════════════════════════ */
-.p12__brand {
-  position: absolute;
-  top: 320px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-family: var(--font-base);
-  font-size: 128px;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: 0.02em;
-  color: var(--ink);
-}
-
-.p12__headline {
-  position: absolute;
-  top: 560px;
-  left: var(--margin-x);
-  right: var(--margin-x);
-  text-align: center;
-}
-
-.p12__body {
-  position: absolute;
-  top: 720px;
-  left: var(--margin-x);
-  right: var(--margin-x);
-  text-align: center;
-}
-
-.p12__stack {
-  top: 920px;
-}
-
-
-/* ════════════════════════════════════════
-   PAGE 13 · Evidence
-══════════════════════════════════════════ */
-.p13__blocks {
-  position: absolute;
-  top: 240px;
-  left: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 56px;
-}
-
-.p13__block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 16px;
 }
 
-.p13__num {
+.p02__num {
   font-family: var(--font-base);
-  font-size: 120px;
-  font-weight: 800;
-  line-height: 0.95;
-  letter-spacing: -0.03em;
-  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--ink-50);
 }
 
-.p13__cap {
+.p02__name {
   font-family: var(--font-base);
   font-size: 17px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--ink-70);
-  text-align: center;
-}
-
-.p13__footer {
-  position: absolute;
-  left: var(--margin-x);
-  right: var(--margin-x);
-  bottom: 200px;
-  text-align: center;
-  font-family: var(--font-base);
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: -0.005em;
   color: var(--ink);
-  white-space: pre-line;
   word-break: keep-all;
 }
 
 
-/* ════════════════════════════════════════
-   PAGE 14 · System Map
-══════════════════════════════════════════ */
-.p14__headline {
+/* ══════════════════════════════════════════
+   PAGE 03 · MESSAGE (원장 인사말)
+   ══════════════════════════════════════════ */
+.p03__body {
   position: absolute;
-  top: 280px;
+  top: 508px;
   left: var(--margin-x);
   right: var(--margin-x);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.p14__body {
+.p03__lead {
+  margin-bottom: 10px;
+}
+
+.p03__sign {
+  position: absolute;
+  right: var(--margin-x);
+  bottom: 220px;
+  text-align: right;
+}
+
+.p03__sign-label {
+  font-family: var(--font-base);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  color: var(--ink-50);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.p03__sign-name {
+  font-family: var(--font-base);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+}
+
+
+/* ══════════════════════════════════════════
+   PAGE 04 · OVERVIEW (학원 개요)
+   ══════════════════════════════════════════ */
+.p04__intro {
   position: absolute;
   top: 500px;
   left: var(--margin-x);
   right: var(--margin-x);
 }
 
-.p14__map {
+.p04__info {
   position: absolute;
-  top: 740px;
+  top: 656px;
   left: var(--margin-x);
   right: var(--margin-x);
 }
 
-.p14__node {
-  display: grid;
-  grid-template-columns: 180px 1fr auto;
-  gap: 40px;
-  align-items: center;
-  padding: 26px 0;
+
+/* ══════════════════════════════════════════
+   PAGE 05 · VISION · MISSION · CORE VALUE
+   ══════════════════════════════════════════ */
+.p05__vm {
+  position: absolute;
+  top: 500px;
+  left: var(--margin-x);
+  right: var(--margin-x);
+  display: flex;
+  flex-direction: column;
   border-top: 1px solid var(--rule);
 }
 
-.p14__node:last-child {
+.p05__vm-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  align-items: baseline;
+  gap: 40px;
+  padding: 28px 0;
   border-bottom: 1px solid var(--rule);
 }
 
-.p14__node-label {
+.p05__vm-label {
   font-family: var(--font-base);
   font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: var(--index-blue);
+  text-transform: uppercase;
+}
+
+.p05__vm-headline {
+  font-family: var(--font-base);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin-bottom: 10px;
+  word-break: keep-all;
+}
+
+.p05__vm-body {
+  font-family: var(--font-base);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.65;
+  color: var(--ink-85);
+  word-break: keep-all;
+}
+
+.p05__cv-label {
+  position: absolute;
+  top: 940px;
+  left: var(--margin-x);
+  right: var(--margin-x);
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--font-base);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: var(--ink-50);
+  text-transform: uppercase;
+}
+
+.p05__cv {
+  position: absolute;
+  top: 998px;
+  left: var(--margin-x);
+  right: var(--margin-x);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.p05__cv-card {
+  padding: 24px 22px 26px;
+  border: 1px solid var(--rule);
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+}
+
+.p05__cv-num {
+  display: block;
+  font-family: var(--font-base);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  color: var(--index-blue);
+  margin-bottom: 14px;
+}
+
+.p05__cv-title {
+  font-family: var(--font-base);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 10px;
+  word-break: keep-all;
+}
+
+.p05__cv-body {
+  font-family: var(--font-base);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--ink-85);
+  word-break: keep-all;
+}
+
+
+/* ══════════════════════════════════════════
+   PAGE 06 · HISTORY (연혁)
+   ══════════════════════════════════════════ */
+.p06__timeline {
+  position: absolute;
+  top: 500px;
+  left: var(--margin-x);
+  right: var(--margin-x);
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--rule);
+}
+
+.p06__year-block {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 60px;
+  padding: 34px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+}
+
+.p06__year {
+  font-family: var(--font-base);
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.022em;
+  color: var(--ink);
+}
+
+.p06__events {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.p06__events li {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 24px;
+  align-items: baseline;
+}
+
+.p06__month {
+  font-family: var(--font-base);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--ink-50);
+}
+
+.p06__event {
+  font-family: var(--font-base);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--ink);
+  word-break: keep-all;
+}
+
+
+/* ══════════════════════════════════════════
+   PAGE 07 · PHILOSOPHY (학습 철학)
+   ══════════════════════════════════════════ */
+.p07__lead {
+  position: absolute;
+  top: 500px;
+  left: var(--margin-x);
+  right: var(--margin-x);
+}
+
+.p07__principles {
+  position: absolute;
+  top: 660px;
+  left: var(--margin-x);
+  right: var(--margin-x);
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--rule);
+}
+
+.p07__principle {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 40px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.p07__principle-num {
+  font-family: var(--font-base);
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.024em;
+  color: var(--index-blue);
+}
+
+.p07__principle-title {
+  font-family: var(--font-base);
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.014em;
+  color: var(--ink);
+  margin-bottom: 10px;
+  word-break: keep-all;
+}
+
+.p07__principle-body {
+  font-family: var(--font-base);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.65;
+  color: var(--ink-85);
+  word-break: keep-all;
+}
+
+
+/* ══════════════════════════════════════════
+   PAGE 08 · DAILY ROUTINE (일일 학습 루틴)
+   ══════════════════════════════════════════ */
+.p08__lead {
+  position: absolute;
+  top: 500px;
+  left: var(--margin-x);
+  right: var(--margin-x);
+}
+
+.p08__schedule {
+  position: absolute;
+  top: 620px;
+  left: var(--margin-x);
+  right: var(--margin-x);
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--rule);
+}
+
+.p08__row {
+  display: grid;
+  grid-template-columns: 120px 1fr 200px;
+  gap: 32px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+}
+
+.p08__time {
+  font-family: var(--font-base);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--index-blue);
+}
+
+.p08__activity {
+  font-family: var(--font-base);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.008em;
+  color: var(--ink);
+  word-break: keep-all;
+}
+
+.p08__note {
+  font-family: var(--font-base);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-70);
+  text-align: right;
+  word-break: keep-all;
+}
+
+
+/* ══════════════════════════════════════════
+   PAGE 09 · MANAGEMENT (관리 시스템)
+   ══════════════════════════════════════════ */
+.p09__lead {
+  position: absolute;
+  top: 500px;
+  left: var(--margin-x);
+  right: var(--margin-x);
+}
+
+.p09__steps {
+  position: absolute;
+  top: 660px;
+  left: var(--margin-x);
+  right: var(--margin-x);
+}
+
+
+/* ══════════════════════════════════════════
+   PAGE 10 · PLATFORM (수학비서)
+   ══════════════════════════════════════════ */
+.p10__hero {
+  position: absolute;
+  top: 510px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.p10__mark {
+  margin-bottom: 24px;
+}
+
+.p10__hero-brand {
+  font-family: var(--font-base);
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -0.022em;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.p10__hero-tag {
+  font-family: var(--font-base);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: var(--ink-50);
+  text-transform: uppercase;
+}
+
+.p10__desc {
+  position: absolute;
+  top: 836px;
+  left: var(--margin-x);
+  right: var(--margin-x);
+  text-align: center;
+}
+
+.p10__features {
+  position: absolute;
+  top: 970px;
+  left: var(--margin-x);
+  right: var(--margin-x);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 36px;
+}
+
+.p10__feature {
+  padding-top: 22px;
+  border-top: 1px solid var(--rule);
+}
+
+.p10__feature-label {
+  display: block;
+  font-family: var(--font-base);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  color: var(--index-blue);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.p10__feature-title {
+  font-family: var(--font-base);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 8px;
+  word-break: keep-all;
+}
+
+.p10__feature-body {
+  font-family: var(--font-base);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--ink-85);
+  word-break: keep-all;
+}
+
+
+/* ══════════════════════════════════════════
+   PAGE 11 · GRIP SERIES (real photo)
+   ══════════════════════════════════════════ */
+.p11__hero {
+  position: absolute;
+  top: 490px;
+  left: var(--margin-x);
+  width: 840px;
+  height: 473px;
+  object-fit: cover;
+  display: block;
+}
+
+.p11__hero-caption {
+  position: absolute;
+  top: 980px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: var(--font-base);
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.26em;
   color: var(--ink-50);
   text-transform: uppercase;
 }
 
-.p14__node-value {
-  font-family: var(--font-base);
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: -0.005em;
-  color: var(--ink);
+.p11__table {
+  position: absolute;
+  top: 1028px;
+  left: var(--margin-x);
+  right: var(--margin-x);
 }
 
-.p14__node-value em {
-  font-style: normal;
-  color: var(--index-blue);
-  font-weight: 700;
+
+/* ══════════════════════════════════════════
+   PAGE 12 · OBJET
+   ══════════════════════════════════════════ */
+.p12__hero {
+  position: absolute;
+  top: 490px;
+  left: var(--margin-x);
+  width: 360px;
+  height: 480px;
 }
 
-.p14__node-mark {
+.p12__lead {
+  position: absolute;
+  top: 500px;
+  left: 524px;
+  right: var(--margin-x);
+}
+
+.p12__table {
+  position: absolute;
+  top: 1010px;
+  left: var(--margin-x);
+  right: var(--margin-x);
+}
+
+
+/* ══════════════════════════════════════════
+   PAGE 13 · EDITORIAL PROCESS
+   ══════════════════════════════════════════ */
+.p13__lead {
+  position: absolute;
+  top: 500px;
+  left: var(--margin-x);
+  right: var(--margin-x);
+}
+
+.p13__steps {
+  position: absolute;
+  top: 660px;
+  left: var(--margin-x);
+  right: var(--margin-x);
+}
+
+
+/* ══════════════════════════════════════════
+   PAGE 14 · FACILITY OVERVIEW
+   ══════════════════════════════════════════ */
+.p14__lead {
+  position: absolute;
+  top: 500px;
+  left: var(--margin-x);
+  right: var(--margin-x);
+}
+
+.p14__grid {
+  position: absolute;
+  top: 636px;
+  left: var(--margin-x);
+  right: var(--margin-x);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.p14__card {
+  padding: 30px 28px 32px;
+  border: 1px solid var(--rule);
+  min-height: 236px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
 }
 
-
-/* ════════════════════════════════════════
-   SPLIT PAGES · P15 Location / P16 Publishing
-══════════════════════════════════════════ */
-.split-img-left,
-.split-img-right {
-  position: absolute;
-  top: 0;
-  width: 480px;
-  height: 1527px;
-}
-
-.split-img-left  { left: 0; }
-.split-img-right { right: 0; }
-
-.split-label {
-  position: absolute;
-  top: 200px;
+.p14__card-num {
   font-family: var(--font-base);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.28em;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  color: var(--index-blue);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.p14__card-name {
+  font-family: var(--font-base);
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.018em;
+  color: var(--ink);
+  margin-bottom: 12px;
+  word-break: keep-all;
+}
+
+.p14__card-addr {
+  font-family: var(--font-base);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-85);
+  margin-bottom: auto;
+}
+
+.p14__card-desc {
+  font-family: var(--font-base);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
   color: var(--ink-50);
   text-transform: uppercase;
+  padding-top: 16px;
+  margin-top: 18px;
+  border-top: 1px solid var(--rule);
 }
 
-.split-headline {
+
+/* ══════════════════════════════════════════
+   PAGE 15 ~ 18 · BRANCH DETAIL (shared)
+   ══════════════════════════════════════════ */
+.branch__photo {
   position: absolute;
-  top: 340px;
-  font-family: var(--font-base);
-  font-size: 36px;
-  font-weight: 800;
-  line-height: 1.32;
-  letter-spacing: -0.022em;
-  color: var(--ink);
-  white-space: pre-line;
-  word-break: keep-all;
+  top: 500px;
+  left: var(--margin-x);
+  width: 840px;
+  height: 380px;
 }
 
-.split-body {
+.branch__info {
+  position: absolute;
+  top: 928px;
+  left: var(--margin-x);
+  right: var(--margin-x);
+}
+
+
+/* ══════════════════════════════════════════
+   PAGE 19 · RESULT (교육 성과)
+   ══════════════════════════════════════════ */
+.p19__lead {
+  position: absolute;
+  top: 500px;
+  left: var(--margin-x);
+  right: var(--margin-x);
+}
+
+.p19__blocks {
   position: absolute;
   top: 720px;
-}
-
-.split-spec {
-  position: absolute;
-  bottom: var(--margin-y);
-  padding-top: 20px;
-  border-top: 1px solid var(--rule);
-  font-family: var(--font-base);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  color: var(--ink-70);
-  text-transform: uppercase;
-}
-
-/* text on right (image on left) */
-.split-text-right {
-  left: 560px;
-  right: var(--margin-x);
-}
-
-/* text on left (image on right) */
-.split-text-left {
-  left: var(--margin-x);
-  right: 560px;
-}
-
-
-/* ════════════════════════════════════════
-   PAGE 17 · Horizon
-══════════════════════════════════════════ */
-.p17__headline {
-  position: absolute;
-  top: 540px;
   left: var(--margin-x);
   right: var(--margin-x);
-  text-align: center;
-  font-size: 60px;
-  font-weight: 800;
-  line-height: 1.3;
-  letter-spacing: -0.028em;
-  color: var(--ink);
-  white-space: pre-line;
-  word-break: keep-all;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
 }
 
-.p17__body {
-  position: absolute;
-  top: 860px;
-  left: var(--margin-x);
-  right: var(--margin-x);
-  text-align: center;
+.p19__block {
+  padding: 36px 28px 40px;
+  border-top: 2px solid var(--ink);
+  display: flex;
+  flex-direction: column;
 }
 
-
-/* ════════════════════════════════════════
-   PAGE 18 · Closing Mark
-══════════════════════════════════════════ */
-.p18__mark {
-  position: absolute;
-  top: 580px;
-  left: 0;
-  right: 0;
-  text-align: center;
+.p19__block-num {
   font-family: var(--font-base);
   font-size: 72px;
   font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: -0.032em;
+  line-height: 1;
+  letter-spacing: -0.028em;
   color: var(--ink);
-  white-space: pre-line;
+  margin-bottom: 28px;
+}
+
+.p19__block-label {
+  font-family: var(--font-base);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  color: var(--ink-50);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.p19__block-note {
+  font-family: var(--font-base);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--ink-85);
   word-break: keep-all;
 }
 
-.p18__rule {
-  position: absolute;
-  top: 860px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 56px;
-  height: 1px;
-  background: var(--ink);
-  opacity: 0.3;
-}
 
-.p18__sub {
+/* ══════════════════════════════════════════
+   PAGE 20 · PROCESS (등록 프로세스)
+   ══════════════════════════════════════════ */
+.p20__lead {
   position: absolute;
-  top: 900px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-family: var(--font-base);
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  color: var(--ink-70);
-  text-transform: uppercase;
-}
-
-.p18__foot {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 100px;
-  text-align: center;
-  font-family: var(--font-base);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.32em;
-  color: var(--ink-50);
-  text-transform: uppercase;
-}
-
-
-/* ════════════════════════════════════════
-   PAGE 19 · Colophon
-══════════════════════════════════════════ */
-.p19__subtitle {
-  position: absolute;
-  top: 240px;
-  left: var(--margin-x);
-  font-family: var(--font-base);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.28em;
-  color: var(--ink-50);
-  text-transform: uppercase;
-}
-
-.p19__title {
-  position: absolute;
-  top: 280px;
+  top: 500px;
   left: var(--margin-x);
   right: var(--margin-x);
-  font-family: var(--font-base);
-  font-size: 44px;
-  font-weight: 800;
-  letter-spacing: -0.025em;
-  color: var(--ink);
 }
 
-.p19__grid {
+.p20__steps {
   position: absolute;
-  top: 460px;
+  top: 660px;
+  left: var(--margin-x);
+  right: var(--margin-x);
+}
+
+
+/* ══════════════════════════════════════════
+   PAGE 21 · CONTACT (전 지점 연락처)
+   ══════════════════════════════════════════ */
+.p21__table {
+  position: absolute;
+  top: 508px;
   left: var(--margin-x);
   right: var(--margin-x);
   display: flex;
   flex-direction: column;
 }
 
-.p19__row {
+.p21__head {
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 48px;
-  padding: 22px 0;
-  border-top: 1px solid var(--rule);
-  align-items: baseline;
-}
-
-.p19__row:last-child {
+  grid-template-columns: 220px 1fr 220px;
+  gap: 24px;
+  padding: 18px 0;
+  border-top: 2px solid var(--ink);
   border-bottom: 1px solid var(--rule);
 }
 
-.p19__row-label {
+.p21__head .p21__col {
   font-family: var(--font-base);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.26em;
   color: var(--ink-50);
   text-transform: uppercase;
 }
 
-.p19__row-value {
+.p21__row {
+  display: grid;
+  grid-template-columns: 220px 1fr 220px;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+}
+
+.p21__row .p21__col--name {
   font-family: var(--font-base);
-  font-size: 19px;
-  font-weight: 500;
-  line-height: 1.55;
-  letter-spacing: -0.003em;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   color: var(--ink);
+}
+
+.p21__row .p21__col--addr {
+  font-family: var(--font-base);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-85);
+  line-height: 1.55;
   word-break: keep-all;
 }
 
-
-/* ════════════════════════════════════════
-   PAGE 20 · Back Cover
-══════════════════════════════════════════ */
-#p20 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.p20__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 36px;
-}
-
-.p20__brand {
+.p21__row .p21__col--tel {
   font-family: var(--font-base);
-  font-size: 48px;
-  font-weight: 800;
-  letter-spacing: -0.025em;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   color: var(--ink);
-  text-align: center;
+  text-align: right;
 }
 
-.p20__rule {
-  width: 40px;
-  height: 1px;
-  background: var(--ink);
-  opacity: 0.3;
-}
-
-.p20__engine {
+.p21__footer {
+  position: absolute;
+  left: var(--margin-x);
+  right: var(--margin-x);
+  bottom: 180px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 14px;
+  gap: 10px;
+  padding-top: 22px;
+  border-top: 1px solid var(--rule);
 }
 
-.p20__engine-label {
+.p21__footer-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  align-items: baseline;
+}
+
+.p21__footer-label {
   font-family: var(--font-base);
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.3em;
+  font-weight: 700;
+  letter-spacing: 0.26em;
   color: var(--ink-50);
   text-transform: uppercase;
 }
 
-.p20__foot {
+.p21__footer-value {
+  font-family: var(--font-base);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+
+/* ══════════════════════════════════════════
+   PAGE 22 · BACK COVER
+   ══════════════════════════════════════════ */
+#p22 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 220px;
+}
+
+.p22__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.p22__brand {
+  font-family: var(--font-base);
+  font-size: 72px;
+  font-weight: 800;
+  letter-spacing: -0.028em;
+  color: var(--ink);
+  margin-bottom: 36px;
+}
+
+.p22__rule {
+  width: 48px;
+  height: 1px;
+  background: var(--ink);
+  opacity: 0.4;
+  margin-bottom: 36px;
+}
+
+.p22__contact-line {
+  font-family: var(--font-base);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--ink-85);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.p22__contact-addr {
+  font-family: var(--font-base);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-70);
+  margin-top: 18px;
+  text-align: center;
+}
+
+.p22__foot {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 80px;
   text-align: center;
   font-family: var(--font-base);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.28em;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
   color: var(--ink-50);
   text-transform: uppercase;
 }

@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(open /Users/artist_rahyeon/code/학원소개서/index.html)"
+      "Bash(open /Users/artist_rahyeon/code/학원소개서/index.html)",
+      "Bash(mdls -name kMDItemNumberOfPages \"/Users/artist_rahyeon/code/학원소개서/assets/ref_visang.pdf\")",
+      "Bash(brew list:*)"
     ]
   }
 }

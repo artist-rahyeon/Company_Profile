@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(brew install:*)",
+      "Read(//opt/homebrew/bin/**)",
+      "Bash(export PATH=\"/opt/homebrew/bin:$PATH\")",
+      "Bash(pdfinfo \"/Users/artist_rahyeon/code/학원소개서/assets/ref_visang.pdf\")",
+      "Bash(pdftotext -layout \"/Users/artist_rahyeon/code/학원소개서/assets/ref_visang.pdf\" /tmp/visang.txt)",
+      "Read(//tmp/**)"
+    ]
+  }
+}
