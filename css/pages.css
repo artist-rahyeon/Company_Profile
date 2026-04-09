@@ -106,6 +106,7 @@
   right: var(--margin);
   color: var(--midnight);
   white-space: pre-line;
+  word-break: keep-all;
 }
 
 
@@ -121,8 +122,10 @@
   position: absolute;
   top: 200px;
   left: var(--margin);
+  right: var(--margin);
   color: var(--offwhite);
   white-space: pre-line;
+  word-break: keep-all;
 }
 
 .p04__body {
@@ -132,6 +135,7 @@
   right: var(--margin);
   color: var(--silver);
   white-space: pre-line;
+  word-break: keep-all;
 }
 
 .p04__graphic {
@@ -171,8 +175,10 @@
   position: absolute;
   top: 1200px;
   left: var(--margin);
+  right: var(--margin);
   color: var(--midnight);
   white-space: pre-line;
+  word-break: keep-all;
 }
 
 .p05__body {
@@ -182,6 +188,7 @@
   right: var(--margin);
   color: var(--midnight);
   white-space: pre-line;
+  word-break: keep-all;
 }
 
 
@@ -224,6 +231,7 @@
   text-align: center;
   color: var(--silver);
   white-space: pre-line;
+  word-break: keep-all;
 }
 
 
@@ -258,6 +266,7 @@
   right: var(--margin);
   color: var(--midnight);
   white-space: pre-line;
+  word-break: keep-all;
 }
 
 
@@ -300,4 +309,414 @@
   text-align: center;
   color: var(--silver);
   white-space: pre-line;
+  word-break: keep-all;
+}
+
+
+/* ════════════════════════════════════════
+   SPLIT LAYOUT 공통
+   좌이미지/우텍스트 or 우이미지/좌텍스트
+   이미지: 540×1920 전체 높이
+   텍스트 가용폭 ~400px → headline 44px
+════════════════════════════════════════ */
+.split-headline {
+  font-family: var(--font-base);
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+.split-body {
+  font-family: var(--font-base);
+  font-size: var(--body-size);
+  font-weight: var(--body-weight);
+  line-height: var(--body-lh);
+  letter-spacing: var(--body-ls);
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+
+/* ════════════════════════════════════════
+   PAGE 09 · GRIP INCEPTION (좌이미지/우텍스트)
+════════════════════════════════════════ */
+#p09 {
+  background: var(--offwhite);
+  position: relative;
+}
+
+.p09__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 540px;
+  height: 1920px;
+  background: #EAEAEA;
+}
+
+.p09__headline {
+  position: absolute;
+  top: 800px;
+  left: 580px;
+  right: var(--margin);
+  color: var(--midnight);
+}
+
+.p09__body {
+  position: absolute;
+  top: 1040px;
+  left: 580px;
+  right: var(--margin);
+  color: var(--midnight);
+}
+
+
+/* ════════════════════════════════════════
+   PAGE 10 · GRIP PATTERN (우이미지/좌텍스트)
+════════════════════════════════════════ */
+#p10 {
+  background: var(--offwhite);
+  position: relative;
+}
+
+.p10__img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 540px;
+  height: 1920px;
+  background: #DEDEDE;
+}
+
+.p10__headline {
+  position: absolute;
+  top: 800px;
+  left: var(--margin);
+  width: 400px;
+  color: var(--midnight);
+}
+
+.p10__body {
+  position: absolute;
+  top: 1040px;
+  left: var(--margin);
+  width: 400px;
+  color: var(--midnight);
+}
+
+
+/* ════════════════════════════════════════
+   PAGE 11 · GRIP DECODE (좌이미지/우텍스트)
+════════════════════════════════════════ */
+#p11 {
+  background: var(--offwhite);
+  position: relative;
+}
+
+.p11__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 540px;
+  height: 1920px;
+  background: #E0E0E0;
+}
+
+.p11__headline {
+  position: absolute;
+  top: 800px;
+  left: 580px;
+  right: var(--margin);
+  color: var(--midnight);
+}
+
+.p11__body {
+  position: absolute;
+  top: 1040px;
+  left: 580px;
+  right: var(--margin);
+  color: var(--midnight);
+}
+
+
+/* ════════════════════════════════════════
+   PAGE 12 · OBJET
+════════════════════════════════════════ */
+#p12 {
+  background: var(--midnight);
+  position: relative;
+}
+
+.p12__brand {
+  position: absolute;
+  top: 600px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--silver);
+  font-family: var(--font-base);
+  font-size: 140px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 10px;
+}
+
+.p12__headline {
+  position: absolute;
+  top: 860px;
+  left: var(--margin);
+  right: var(--margin);
+  text-align: center;
+  color: var(--offwhite);
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+.p12__body {
+  position: absolute;
+  top: 1100px;
+  left: var(--margin);
+  right: var(--margin);
+  text-align: center;
+  color: var(--silver);
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+.p12__date {
+  position: absolute;
+  top: 1500px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--offwhite);
+  font-family: var(--font-base);
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+
+/* ════════════════════════════════════════
+   PAGE 13 · 증명된 성과
+════════════════════════════════════════ */
+#p13 {
+  background: var(--midnight);
+  position: relative;
+}
+
+/* 공통: 숫자 블록 */
+.p13__num {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--silver);
+  font-family: var(--font-base);
+  font-size: 160px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.p13__sub {
+  position: absolute;
+  left: var(--margin);
+  right: var(--margin);
+  text-align: center;
+  color: var(--offwhite);
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+.p13__n1 { top: 300px; }
+.p13__t1 { top: 480px; }
+.p13__n2 { top: 760px; }
+.p13__t2 { top: 940px; }
+.p13__n3 { top: 1220px; }
+.p13__t3 { top: 1400px; }
+
+.p13__footer {
+  position: absolute;
+  top: 1700px;
+  left: var(--margin);
+  right: var(--margin);
+  text-align: center;
+  color: var(--silver);
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+
+/* ════════════════════════════════════════
+   PAGE 14 · 교육 생태계
+════════════════════════════════════════ */
+#p14 {
+  background: var(--offwhite);
+  position: relative;
+}
+
+.p14__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1080px;
+  height: 960px;
+  background: #EAEAEA;
+}
+
+.p14__headline {
+  position: absolute;
+  top: 1100px;
+  left: var(--margin);
+  right: var(--margin);
+  color: var(--midnight);
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+.p14__body {
+  position: absolute;
+  top: 1360px;
+  left: var(--margin);
+  right: var(--margin);
+  color: var(--midnight);
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+
+/* ════════════════════════════════════════
+   PAGE 15 · 오프라인 거점 (우이미지/좌텍스트)
+════════════════════════════════════════ */
+#p15 {
+  background: var(--offwhite);
+  position: relative;
+}
+
+.p15__img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 540px;
+  height: 1920px;
+  background: #D0D0D0;
+}
+
+.p15__headline {
+  position: absolute;
+  top: 800px;
+  left: var(--margin);
+  width: 400px;
+  color: var(--midnight);
+}
+
+.p15__body {
+  position: absolute;
+  top: 1060px;
+  left: var(--margin);
+  width: 400px;
+  color: var(--midnight);
+}
+
+
+/* ════════════════════════════════════════
+   PAGE 16 · 콘텐츠 출판 (좌이미지/우텍스트)
+════════════════════════════════════════ */
+#p16 {
+  background: var(--offwhite);
+  position: relative;
+}
+
+.p16__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 540px;
+  height: 1920px;
+  background: #EAEAEA;
+}
+
+.p16__headline {
+  position: absolute;
+  top: 800px;
+  left: 580px;
+  right: var(--margin);
+  color: var(--midnight);
+}
+
+.p16__body {
+  position: absolute;
+  top: 1040px;
+  left: 580px;
+  right: var(--margin);
+  color: var(--midnight);
+}
+
+
+/* ════════════════════════════════════════
+   PAGE 17 · 미래 비전
+════════════════════════════════════════ */
+#p17 {
+  background: var(--midnight);
+  position: relative;
+}
+
+.p17__headline {
+  position: absolute;
+  top: 800px;
+  left: var(--margin);
+  right: var(--margin);
+  text-align: center;
+  color: var(--offwhite);
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+.p17__body {
+  position: absolute;
+  top: 1060px;
+  left: var(--margin);
+  right: var(--margin);
+  text-align: center;
+  color: var(--silver);
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+
+/* ════════════════════════════════════════
+   PAGE 18 · 마침표
+════════════════════════════════════════ */
+#p18 {
+  background: var(--offwhite);
+  position: relative;
+}
+
+.p18__headline {
+  position: absolute;
+  top: 1520px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--midnight);
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+.p18__sub {
+  position: absolute;
+  top: 1760px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--silver);
+  font-family: var(--font-base);
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  word-break: keep-all;
 }
