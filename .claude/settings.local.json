@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(open /Users/artist_rahyeon/code/학원소개서/index.html)"
+    ]
+  }
+}

@@ -1,0 +1,303 @@
+/* ════════════════════════════════════════
+   PAGE 01 · 커버
+════════════════════════════════════════ */
+#p01 {
+  background: var(--midnight);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p01__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.p01__title {
+  color: var(--offwhite);
+  font-family: var(--font-base);
+  font-size: 96px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.p01__sub {
+  color: var(--silver);
+  text-align: center;
+  letter-spacing: 0em;
+}
+
+
+/* ════════════════════════════════════════
+   PAGE 02 · 목차
+════════════════════════════════════════ */
+#p02 {
+  background: var(--offwhite);
+  display: flex;
+}
+
+.p02__left {
+  width: 200px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.p02__line {
+  position: absolute;
+  right: 0;
+  top: 100px;
+  bottom: 100px;
+  width: 1px;
+  background: var(--silver);
+}
+
+.p02__right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
+  padding-right: var(--margin);
+}
+
+.p02__list {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.p02__item {
+  color: var(--midnight);
+  white-space: nowrap;
+  list-style: none;
+}
+
+
+/* ════════════════════════════════════════
+   PAGE 03 · 핵심 철학
+════════════════════════════════════════ */
+#p03 {
+  background: var(--offwhite);
+  position: relative;
+}
+
+.p03__headline {
+  position: absolute;
+  top: 200px;
+  left: var(--margin);
+  right: var(--margin);
+  color: var(--midnight);
+  white-space: pre-line;
+  word-break: keep-all;
+  /* H1 100px → 880px 안전영역 초과, 60px로 조정 */
+  font-size: 60px;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+}
+
+.p03__body {
+  position: absolute;
+  top: 1400px;
+  left: var(--margin);
+  right: var(--margin);
+  color: var(--midnight);
+  white-space: pre-line;
+}
+
+
+/* ════════════════════════════════════════
+   PAGE 04 · 성장의 궤적
+════════════════════════════════════════ */
+#p04 {
+  background: var(--midnight);
+  position: relative;
+}
+
+.p04__headline {
+  position: absolute;
+  top: 200px;
+  left: var(--margin);
+  color: var(--offwhite);
+  white-space: pre-line;
+}
+
+.p04__body {
+  position: absolute;
+  top: 480px;
+  left: var(--margin);
+  right: var(--margin);
+  color: var(--silver);
+  white-space: pre-line;
+}
+
+.p04__graphic {
+  position: absolute;
+  top: 768px;
+  left: var(--margin);
+  width: 880px;
+  height: 960px;
+  background: #2A2C35;
+}
+
+
+/* ════════════════════════════════════════
+   PAGE 05 · 공간의 본질
+════════════════════════════════════════ */
+#p05 {
+  background: var(--offwhite);
+  position: relative;
+}
+
+.p05__images {
+  position: absolute;
+  top: 100px;
+  left: var(--margin);
+  display: flex;
+  gap: var(--gutter);
+}
+
+.p05__img {
+  width: 277px;
+  height: 960px;
+  background: #E0E0E0;
+  flex-shrink: 0;
+}
+
+.p05__headline {
+  position: absolute;
+  top: 1200px;
+  left: var(--margin);
+  color: var(--midnight);
+  white-space: pre-line;
+}
+
+.p05__body {
+  position: absolute;
+  top: 1460px;
+  left: var(--margin);
+  right: var(--margin);
+  color: var(--midnight);
+  white-space: pre-line;
+}
+
+
+/* ════════════════════════════════════════
+   PAGE 06 · 700분 몰입
+════════════════════════════════════════ */
+#p06 {
+  background: var(--midnight);
+  position: relative;
+}
+
+.p06__number {
+  position: absolute;
+  top: 700px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--silver);
+  font-family: var(--font-base);
+  font-size: 320px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.p06__headline {
+  position: absolute;
+  top: 1060px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--offwhite);
+}
+
+.p06__body {
+  position: absolute;
+  top: 1220px;
+  left: var(--margin);
+  right: var(--margin);
+  text-align: center;
+  color: var(--silver);
+  white-space: pre-line;
+}
+
+
+/* ════════════════════════════════════════
+   PAGE 07 · 통제 메커니즘
+════════════════════════════════════════ */
+#p07 {
+  background: var(--offwhite);
+  position: relative;
+}
+
+.p07__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1080px;
+  height: 864px;
+  background: #D0D0D0;
+}
+
+.p07__headline {
+  position: absolute;
+  top: 1000px;
+  left: var(--margin);
+  color: var(--midnight);
+}
+
+.p07__body {
+  position: absolute;
+  top: 1160px;
+  left: var(--margin);
+  right: var(--margin);
+  color: var(--midnight);
+  white-space: pre-line;
+}
+
+
+/* ════════════════════════════════════════
+   PAGE 08 · 학습 플랫폼
+════════════════════════════════════════ */
+#p08 {
+  background: var(--midnight);
+  position: relative;
+}
+
+.p08__number {
+  position: absolute;
+  top: 600px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--silver);
+  font-family: var(--font-base);
+  font-size: 220px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.p08__headline {
+  position: absolute;
+  top: 960px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--offwhite);
+}
+
+.p08__body {
+  position: absolute;
+  top: 1120px;
+  left: var(--margin);
+  right: var(--margin);
+  text-align: center;
+  color: var(--silver);
+  white-space: pre-line;
+}

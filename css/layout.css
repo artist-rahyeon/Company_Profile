@@ -1,0 +1,75 @@
+/* ── Scroll Container ── */
+.scroll-container {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+/* ── Scale Wrapper ── */
+.scale-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: top center;
+}
+
+/* ── Frame Base ── */
+.frame {
+  width: var(--frame-w);
+  height: var(--frame-h);
+  position: relative;
+  overflow: hidden;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+/* ── Safe Area ── */
+.safe {
+  padding-left: var(--margin);
+  padding-right: var(--margin);
+}
+
+/* ── Image Placeholder ── */
+.img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+}
+
+.img-placeholder::after {
+  content: attr(data-label);
+  font-family: var(--font-base);
+  font-size: 22px;
+  font-weight: 300;
+  color: #999;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ── Page Indicator ── */
+.page-indicator {
+  position: fixed;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  background: var(--silver);
+  opacity: 0.35;
+  transition: opacity 0.3s ease, height 0.3s ease;
+}
+
+.dot.active {
+  opacity: 1;
+  height: 20px;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>각인학원 소개서</title>
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+
+  <!-- 페이지 인디케이터 -->
+  <nav class="page-indicator" id="indicator">
+    <div class="dot active" data-page="0"></div>
+    <div class="dot" data-page="1"></div>
+    <div class="dot" data-page="2"></div>
+    <div class="dot" data-page="3"></div>
+    <div class="dot" data-page="4"></div>
+    <div class="dot" data-page="5"></div>
+    <div class="dot" data-page="6"></div>
+    <div class="dot" data-page="7"></div>
+  </nav>
+
+  <div class="scroll-container" id="scrollContainer">
+    <div class="scale-wrapper" id="scaleWrapper">
+
+      <!-- ══ PAGE 01 · 커버 ══ -->
+      <div class="frame" id="p01">
+        <div class="p01__inner">
+          <p class="p01__title">각인학원</p>
+          <p class="body p01__sub">의지를 넘어서는 구조. 각인이라는 새로운 기준.</p>
+        </div>
+      </div>
+
+      <!-- ══ PAGE 02 · 목차 ══ -->
+      <div class="frame" id="p02">
+        <div class="p02__left">
+          <div class="p02__line"></div>
+        </div>
+        <div class="p02__right">
+          <ul class="p02__list">
+            <li class="h2 p02__item">01. 핵심 철학</li>
+            <li class="h2 p02__item">02. 성장의 궤적</li>
+            <li class="h2 p02__item">03. 공간의 본질</li>
+            <li class="h2 p02__item">04. 학습 플랫폼과 콘텐츠</li>
+            <li class="h2 p02__item">05. 증명된 성과</li>
+            <li class="h2 p02__item">06. 교육 생태계</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ══ PAGE 03 · 핵심 철학 ══ -->
+      <div class="frame" id="p03">
+        <p class="h1 p03__headline">교육은 직관의 영역이 아닙니다.&#10;검증된 시스템의 영역입니다.</p>
+        <p class="body p03__body">개인의 감각은 훌륭하지만, 완벽하게 복제될 수 없습니다.&#10;특정 강사의 컨디션에 의존하는 관행을 거부합니다.&#10;우리가 구축한 독보적인 시스템은 누가 가르치느냐의 시대를 넘어,&#10;어떤 환경에서 배우느냐의 시대를 엽니다.</p>
+      </div>
+
+      <!-- ══ PAGE 04 · 성장의 궤적 ══ -->
+      <div class="frame" id="p04">
+        <p class="h2 p04__headline">단 1년 만에 530% 수직 성장.&#10;시스템이 증명한 확장의 기록.</p>
+        <p class="body p04__body">2023년 설립 이후, 검증된 시스템을 수도권에 이식하며 폭발적으로 성장했습니다.&#10;사우본원을 필두로 고촌 센트럴관과 드림관, 장기센터, 검단 연세관까지.&#10;각인의 궤적은 대한민국 입시 지형의 새로운 척도가 되고 있습니다.</p>
+        <div class="p04__graphic img-placeholder" data-label="타임라인 그래픽 영역"></div>
+      </div>
+
+      <!-- ══ PAGE 05 · 공간의 본질 ══ -->
+      <div class="frame" id="p05">
+        <div class="p05__images">
+          <div class="p05__img img-placeholder" data-label="인테리어 01"></div>
+          <div class="p05__img img-placeholder" data-label="인테리어 02"></div>
+          <div class="p05__img img-placeholder" data-label="인테리어 03"></div>
+        </div>
+        <p class="h2 p05__headline">지역 밀착형 거점.&#10;오차 없는 품질의 공간 복제.</p>
+        <p class="body p05__body">사우, 장기, 고촌, 검단을 잇는 각인의 오프라인 허브.&#10;어느 지점을 가더라도 완벽히 동일한 밀도와 최상위 환경을 제공합니다.</p>
+      </div>
+
+      <!-- ══ PAGE 06 · 700분 몰입 ══ -->
+      <div class="frame" id="p06">
+        <p class="p06__number">700</p>
+        <p class="h2 p06__headline">700분의 무균 몰입.</p>
+        <p class="body p06__body">학생 1인당 하루 최대 700분. 의지에 기대지 않습니다.&#10;디지털 기기와 외부 자극으로부터 철저히 격리된 진공 상태를 설계하여&#10;학생의 인지 에너지를 완벽하게 보호합니다.</p>
+      </div>
+
+      <!-- ══ PAGE 07 · 통제 메커니즘 ══ -->
+      <div class="frame" id="p07">
+        <div class="p07__img img-placeholder" data-label="프리미엄 학습 공간 이미지"></div>
+        <p class="h2 p07__headline">통제와 보호의 메커니즘.</p>
+        <p class="body p07__body">• 인지 에너지 보호 : 스마트폰을 차단하여 불필요한 에너지 소모 0%&#10;&#10;• 몰입의 정교한 조율 : 미세한 징후를 포착해 흐름을 잇는 정밀한 관리 동선&#10;&#10;• 사고의 외과적 개입 : 논리의 병목을 단 한 번에 뚫어내는 최상위 질의응답 시스템</p>
+      </div>
+
+      <!-- ══ PAGE 08 · 학습 플랫폼 ══ -->
+      <div class="frame" id="p08">
+        <p class="p08__number">160,572</p>
+        <p class="h2 p08__headline">내 손 안의 초개인화 시스템.</p>
+        <p class="body p08__body">단순한 학원 관리를 넘어섭니다.&#10;수학비서의 데이터가 탑재된 전용 어플리케이션을 통해,&#10;학생의 모든 학습 궤적이 실시간으로 분석되고&#10;완벽한 초개인화 커리큘럼으로 제공됩니다.</p>
+      </div>
+
+    </div><!-- /scale-wrapper -->
+  </div><!-- /scroll-container -->
+
+  <script src="js/scaler.js"></script>
+  <script src="js/indicator.js"></script>
+</body>
+</html>
