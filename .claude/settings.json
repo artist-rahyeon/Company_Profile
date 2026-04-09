@@ -6,7 +6,9 @@
       "Bash(export PATH=\"/opt/homebrew/bin:$PATH\")",
       "Bash(pdfinfo \"/Users/artist_rahyeon/code/학원소개서/assets/ref_visang.pdf\")",
       "Bash(pdftotext -layout \"/Users/artist_rahyeon/code/학원소개서/assets/ref_visang.pdf\" /tmp/visang.txt)",
-      "Read(//tmp/**)"
+      "Read(//tmp/**)",
+      "WebFetch(domain:gakk-in.com)",
+      "WebFetch(domain:gakkin-studio.com)"
     ]
   }
 }
