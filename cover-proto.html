@@ -301,6 +301,104 @@
       color: var(--ink);
     }
 
+    /* ══ 밝은 배경 공용 · 다크 타이포 오버라이드 ══ */
+    .proto-cover--light .p01__eyebrow {
+      color: rgba(20, 21, 25, 0.5);
+    }
+    .proto-cover--light .p01__title {
+      color: var(--ink);
+      text-shadow: none;
+    }
+    .proto-cover--light .p01__rule {
+      background: rgba(20, 21, 25, 0.3);
+    }
+    .proto-cover--light .p01__sub {
+      color: var(--ink-70);
+    }
+    .proto-cover--light .p01__facts {
+      border-top-color: rgba(20, 21, 25, 0.2);
+    }
+    .proto-cover--light .p01__fact-label {
+      color: rgba(20, 21, 25, 0.5);
+    }
+    .proto-cover--light .p01__fact-value {
+      color: var(--ink);
+    }
+
+    /* ══ VARIANT J · 빛과 벽면 (AI생성) ══
+       크림 플라스터 벽 + 대각선 그림자 · 이미 포트레이트 */
+    #cover-j {
+      background-image: url("assets/cover/light-wall.jpeg");
+      background-size: cover;
+      background-position: center;
+    }
+    #cover-j::before {
+      background: linear-gradient(180deg,
+        rgba(246, 245, 242, 0.15) 0%,
+        rgba(246, 245, 242, 0) 40%,
+        rgba(20, 21, 25, 0.08) 70%,
+        rgba(20, 21, 25, 0.4) 100%);
+    }
+
+    /* ══ VARIANT K · 정물 · 노트북+만년필+황동 (AI생성) ══
+       탑다운 에디토리얼 · 밝은 린넨 배경 */
+    #cover-k {
+      background-image: url("assets/cover/stilllife.jpeg");
+      background-size: cover;
+      background-position: center 30%;
+    }
+    #cover-k::before {
+      background: linear-gradient(180deg,
+        rgba(246, 245, 242, 0.55) 0%,
+        rgba(246, 245, 242, 0.15) 30%,
+        rgba(246, 245, 242, 0) 50%,
+        rgba(20, 21, 25, 0.35) 100%);
+    }
+
+    /* ══ VARIANT L · 먹과 한지 (AI생성) ══
+       한지 위 먹 붓자국 · 스캔풍 어두운 테두리 = 자연 프레임
+       타이틀을 빈 한지 위(상단)에 배치 */
+    #cover-l {
+      background-color: #2A2824;
+      background-image: url("assets/cover/ink-hanji.jpeg");
+      background-size: 82% auto;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+    #cover-l::before {
+      background: linear-gradient(180deg,
+        rgba(42, 40, 36, 0.3) 0%,
+        rgba(42, 40, 36, 0) 15%,
+        rgba(42, 40, 36, 0) 85%,
+        rgba(42, 40, 36, 0.6) 100%);
+    }
+    #cover-l .p01__eyebrow {
+      color: rgba(246, 245, 242, 0.55);
+    }
+    #cover-l .p01__inner {
+      transform: translateY(-90%);
+    }
+    #cover-l .p01__title {
+      color: #3A3832;
+      text-shadow: none;
+      font-size: 120px;
+    }
+    #cover-l .p01__rule {
+      background: rgba(58, 56, 50, 0.35);
+    }
+    #cover-l .p01__sub {
+      color: rgba(58, 56, 50, 0.7);
+    }
+    #cover-l .p01__facts {
+      border-top-color: rgba(246, 245, 242, 0.2);
+    }
+    #cover-l .p01__fact-label {
+      color: rgba(246, 245, 242, 0.45);
+    }
+    #cover-l .p01__fact-value {
+      color: rgba(246, 245, 242, 0.85);
+    }
+
     /* ══ proto cover inner · 동일 레이아웃 ══ */
     .proto-cover .p01__eyebrow {
       color: rgba(246, 245, 242, 0.7);
@@ -519,6 +617,71 @@
           VARIANT G · SHINYOUNG SPLIT
         </div>
         <div class="proto-split-photo"></div>
+        <p class="p01__eyebrow">GAKIN ACADEMY · COMPANY PROFILE</p>
+        <div class="p01__inner">
+          <h1 class="p01__title">각인학원</h1>
+          <div class="p01__rule"></div>
+          <p class="p01__sub">학원 소개서 · 2026 EDITION</p>
+        </div>
+        <div class="p01__facts">
+          <div class="p01__fact"><span class="p01__fact-label">EST.</span><span class="p01__fact-value">2021</span></div>
+          <div class="p01__fact"><span class="p01__fact-label">BRANCHES</span><span class="p01__fact-value">4</span></div>
+          <div class="p01__fact"><span class="p01__fact-label">LOCATION</span><span class="p01__fact-value">김포 · 고촌</span></div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════
+           VARIANT J · LIGHT WALL (AI · 빛과 벽면)
+      ══════════════════════════════════════════ -->
+      <div class="frame proto-cover proto-cover--light" id="cover-j">
+        <div class="proto-label">
+          <span class="proto-label__dot"></span>
+          VARIANT J · LIGHT WALL (AI)
+        </div>
+        <p class="p01__eyebrow">GAKIN ACADEMY · COMPANY PROFILE</p>
+        <div class="p01__inner">
+          <h1 class="p01__title">각인학원</h1>
+          <div class="p01__rule"></div>
+          <p class="p01__sub">학원 소개서 · 2026 EDITION</p>
+        </div>
+        <div class="p01__facts">
+          <div class="p01__fact"><span class="p01__fact-label">EST.</span><span class="p01__fact-value">2021</span></div>
+          <div class="p01__fact"><span class="p01__fact-label">BRANCHES</span><span class="p01__fact-value">4</span></div>
+          <div class="p01__fact"><span class="p01__fact-label">LOCATION</span><span class="p01__fact-value">김포 · 고촌</span></div>
+        </div>
+      </div>
+
+
+      <!-- ══════════════════════════════════════════
+           VARIANT K · STILL LIFE (AI · 정물)
+      ══════════════════════════════════════════ -->
+      <div class="frame proto-cover proto-cover--light" id="cover-k">
+        <div class="proto-label">
+          <span class="proto-label__dot"></span>
+          VARIANT K · STILL LIFE (AI)
+        </div>
+        <p class="p01__eyebrow">GAKIN ACADEMY · COMPANY PROFILE</p>
+        <div class="p01__inner">
+          <h1 class="p01__title">각인학원</h1>
+          <div class="p01__rule"></div>
+          <p class="p01__sub">학원 소개서 · 2026 EDITION</p>
+        </div>
+        <div class="p01__facts">
+          <div class="p01__fact"><span class="p01__fact-label">EST.</span><span class="p01__fact-value">2021</span></div>
+          <div class="p01__fact"><span class="p01__fact-label">BRANCHES</span><span class="p01__fact-value">4</span></div>
+          <div class="p01__fact"><span class="p01__fact-label">LOCATION</span><span class="p01__fact-value">김포 · 고촌</span></div>
+        </div>
+      </div>
+
+
+      <!-- ══════════════════════════════════════════
+           VARIANT L · INK ON HANJI (AI · 먹과 한지)
+      ══════════════════════════════════════════ -->
+      <div class="frame proto-cover" id="cover-l">
+        <div class="proto-label">
+          <span class="proto-label__dot"></span>
+          VARIANT L · INK ON HANJI (AI)
+        </div>
         <p class="p01__eyebrow">GAKIN ACADEMY · COMPANY PROFILE</p>
         <div class="p01__inner">
           <h1 class="p01__title">각인학원</h1>

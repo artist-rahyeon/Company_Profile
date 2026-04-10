@@ -8,7 +8,13 @@
       "Bash(pdftotext -layout \"/Users/artist_rahyeon/code/학원소개서/assets/ref_visang.pdf\" /tmp/visang.txt)",
       "Read(//tmp/**)",
       "WebFetch(domain:gakk-in.com)",
-      "WebFetch(domain:gakkin-studio.com)"
+      "WebFetch(domain:gakkin-studio.com)",
+      "Bash(mkdir -p /Users/artist_rahyeon/code/학원소개서/assets/cover)",
+      "Bash(cp \"/Users/artist_rahyeon/code/학원소개서/Gemini_Generated_Image_dr0h49dr0h49dr0h.jpeg\" /Users/artist_rahyeon/code/학원소개서/assets/cover/light-wall.jpeg)",
+      "Bash(cp \"/Users/artist_rahyeon/code/학원소개서/Gemini_Generated_Image_vv5zq4vv5zq4vv5z.jpeg\" /Users/artist_rahyeon/code/학원소개서/assets/cover/stilllife.jpeg)"
+    ],
+    "additionalDirectories": [
+      "/Users/artist_rahyeon/code/학원소개서"
     ]
   }
 }
