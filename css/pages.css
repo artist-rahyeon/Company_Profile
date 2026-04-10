@@ -16,8 +16,10 @@
 .p04__eng,
 .p05__eng,
 .p06__eng,
+.pgr__eng,
 .p07__eng,
 .p08__eng,
+.pwd__eng,
 .p09__eng,
 .p10__eng,
 .p11__eng,
@@ -44,8 +46,10 @@
 .p04__title,
 .p05__title,
 .p06__title,
+.pgr__title,
 .p07__title,
 .p08__title,
+.pwd__title,
 .p09__title,
 .p10__title,
 .p11__title,
@@ -82,8 +86,10 @@
 .p04__sub,
 .p05__sub,
 .p06__sub,
+.pgr__sub,
 .p07__sub,
 .p08__sub,
+.pwd__sub,
 .p09__sub,
 .p10__sub,
 .p11__sub,
@@ -500,6 +506,7 @@
 /* ══════════════════════════════════════════
    PAGE 03 · MESSAGE (원장 인사말)
    ══════════════════════════════════════════ */
+/* 좌: 인용문+본문 (120~620) · 우: 사진+서명 (660~960) */
 .p03__quote {
   position: absolute;
   top: 440px;
@@ -507,25 +514,26 @@
   right: var(--margin-x);
   padding: 36px 0;
   border-top: 2px solid var(--ink);
-  border-bottom: 1px solid var(--rule);
+  border-bottom: none;
   margin: 0;
 }
 
 .p03__quote-text {
   font-family: var(--font-base);
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.45;
   letter-spacing: -0.018em;
   color: var(--ink);
   word-break: keep-all;
+  width: 500px;
 }
 
 .p03__body {
   position: absolute;
-  top: 660px;
+  top: 680px;
   left: var(--margin-x);
-  right: var(--margin-x);
+  width: 500px;
   display: flex;
   flex-direction: column;
   gap: 22px;
@@ -533,7 +541,7 @@
 
 .p03__p {
   font-family: var(--font-base);
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 500;
   line-height: 1.7;
   letter-spacing: -0.005em;
@@ -541,11 +549,23 @@
   word-break: keep-all;
 }
 
+.p03__photo {
+  position: absolute;
+  top: 480px;
+  right: var(--margin-x);
+  width: 280px;
+  height: 370px;
+  object-fit: cover;
+  object-position: center 15%;
+  border-bottom: 3px solid var(--ink);
+}
+
 .p03__sign {
   position: absolute;
+  top: 870px;
   right: var(--margin-x);
-  bottom: 200px;
-  text-align: right;
+  width: 280px;
+  text-align: left;
 }
 
 .p03__sign-label {
@@ -700,8 +720,9 @@
   grid-template-columns: 180px 1fr;
   gap: 48px;
   padding: 30px 0;
+  min-height: 100px;
   border-bottom: 1px solid var(--rule);
-  align-items: baseline;
+  align-items: start;
 }
 
 .p06__year {
@@ -788,9 +809,159 @@
 
 
 /* ══════════════════════════════════════════
-   PAGE 08 · DAILY ROUTINE (일일 학습 루틴)
+   PAGE · GROWTH (성장 지표)
+   G 변형 · 히어로 "4배" + 6 아이콘 카드
    ══════════════════════════════════════════ */
-.p08__schedule {
+.pgr__hero {
+  position: absolute;
+  top: 440px;
+  left: var(--margin-x);
+  right: var(--margin-x);
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 48px;
+  padding: 32px 0 40px;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  align-items: center;
+}
+
+.pgr__hero-pre {
+  font-family: var(--font-base);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--index-blue);
+  margin-bottom: 8px;
+}
+
+.pgr__hero-num {
+  font-family: var(--font-base);
+  font-size: 120px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  line-height: 0.85;
+}
+
+.pgr__hero-unit {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--ink-50);
+}
+
+.pgr__hero-desc {
+  font-family: var(--font-base);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--ink-50);
+  margin-top: 8px;
+}
+
+.pgr__hero-body {
+  font-family: var(--font-base);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: var(--ink-70);
+  word-break: keep-all;
+}
+
+/* 6 아이콘 카드 그리드 */
+.pgr__cards {
+  position: absolute;
+  top: 720px;
+  left: var(--margin-x);
+  right: var(--margin-x);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 40px;
+}
+
+.pgr__card {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--rule);
+  text-align: center;
+}
+
+.pgr__card-icon-wrap {
+  margin: 0 auto 16px;
+}
+
+.pgr__icon {
+  width: 52px;
+  height: 52px;
+  color: var(--ink-50);
+  stroke-width: 1.5;
+}
+
+.pgr__card-value {
+  font-family: var(--font-base);
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  line-height: 1;
+  font-feature-settings: "tnum";
+}
+
+.pgr__card-unit {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink-50);
+  letter-spacing: 0;
+}
+
+.pgr__card-label {
+  font-family: var(--font-base);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--ink-50);
+  margin-top: 8px;
+}
+
+
+/* ══════════════════════════════════════════
+   PAGE · WHAT WE DO (사업 영역)
+   ══════════════════════════════════════════ */
+.pwd__eng {
+  position: absolute;
+  top: 188px;
+  left: var(--margin-x);
+  font-family: var(--font-base);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  color: var(--ink-50);
+  text-transform: uppercase;
+}
+
+.pwd__title {
+  position: absolute;
+  top: 216px;
+  left: var(--margin-x);
+  font-family: var(--font-base);
+  font-size: 84px;
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.032em;
+  color: var(--ink);
+}
+
+.pwd__sub {
+  position: absolute;
+  top: 348px;
+  left: var(--margin-x);
+  font-family: var(--font-base);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.008em;
+  color: var(--ink);
+}
+
+.pwd__list {
   position: absolute;
   top: 440px;
   left: var(--margin-x);
@@ -800,78 +971,66 @@
   border-top: 2px solid var(--ink);
 }
 
-.p08__head,
-.p08__row {
+.pwd__row {
   display: grid;
-  grid-template-columns: 120px 1fr 120px 160px;
-  gap: 24px;
-  padding: 18px 0;
+  grid-template-columns: 1fr 240px;
+  gap: 32px;
+  padding: 28px 0;
   border-bottom: 1px solid var(--rule);
-  align-items: baseline;
+  align-items: start;
 }
 
-.p08__head {
-  padding: 14px 0;
+.pwd__row-num {
+  font-family: var(--font-base);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--index-blue);
+  margin-bottom: 12px;
 }
 
-.p08__head .p08__col {
+.pwd__row-cat {
   font-family: var(--font-base);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.24em;
   color: var(--ink-50);
   text-transform: uppercase;
+  margin-bottom: 6px;
 }
 
-.p08__head .p08__col--dur,
-.p08__head .p08__col--note {
-  text-align: right;
-}
-
-.p08__row .p08__col--time {
+.pwd__row-title {
   font-family: var(--font-base);
-  font-size: 15px;
+  font-size: 24px;
   font-weight: 700;
-  color: var(--index-blue);
-}
-
-.p08__row .p08__col--activity {
-  font-family: var(--font-base);
-  font-size: 17px;
-  font-weight: 600;
-  letter-spacing: -0.005em;
+  letter-spacing: -0.01em;
   color: var(--ink);
-  word-break: keep-all;
+  margin-bottom: 10px;
 }
 
-.p08__row .p08__col--dur {
+.pwd__row-desc {
   font-family: var(--font-base);
   font-size: 14px;
   font-weight: 500;
-  color: var(--ink-85);
-  text-align: right;
-}
-
-.p08__row .p08__col--note {
-  font-family: var(--font-base);
-  font-size: 13px;
-  font-weight: 500;
+  line-height: 1.6;
   color: var(--ink-70);
-  text-align: right;
   word-break: keep-all;
 }
 
-.p08__row--total {
-  border-top: 1px solid var(--ink);
-  border-bottom: none;
+.pwd__row-url {
+  font-family: var(--font-base);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--index-blue);
+  margin-top: 10px;
 }
 
-.p08__row--total .p08__col--time,
-.p08__row--total .p08__col--activity,
-.p08__row--total .p08__col--dur,
-.p08__row--total .p08__col--note {
-  font-weight: 700;
-  color: var(--ink);
+.pwd__row-photo {
+  width: 240px;
+  height: 160px;
+  object-fit: cover;
+  background: var(--paper-shadow);
 }
 
 
@@ -1212,6 +1371,57 @@
 
 
 /* ══════════════════════════════════════════
+   PAGE 16 · 시설 소개 · 4×3 compact grid
+   ══════════════════════════════════════════ */
+.p16__grid {
+  position: absolute;
+  top: 440px;
+  left: var(--margin-x);
+  right: var(--margin-x);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.p16__card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.p16__card-photo {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  background: var(--paper-shadow);
+}
+
+.p16__card-cap {
+  padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.p16__card-name {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.p16__card-desc {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--ink-70);
+}
+
+
+/* ══════════════════════════════════════════
    PAGE 19 · RESULT (교육 성과)
    ══════════════════════════════════════════ */
 .p19__metrics {
@@ -1330,8 +1540,8 @@
 
 .p21__head {
   display: grid;
-  grid-template-columns: 220px 1fr 220px;
-  gap: 24px;
+  grid-template-columns: 180px 1fr 160px;
+  gap: 16px;
   padding: 16px 0;
   border-top: 2px solid var(--ink);
   border-bottom: 1px solid var(--rule);
@@ -1346,18 +1556,28 @@
   text-transform: uppercase;
 }
 
+.p21__group-label {
+  font-family: var(--font-base);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--index-blue);
+  padding: 18px 0 6px;
+  border-bottom: 1px solid var(--rule);
+}
+
 .p21__row {
   display: grid;
-  grid-template-columns: 220px 1fr 220px;
-  gap: 24px;
-  padding: 26px 0;
+  grid-template-columns: 180px 1fr 160px;
+  gap: 16px;
+  padding: 10px 0;
   border-bottom: 1px solid var(--rule);
   align-items: baseline;
 }
 
 .p21__row .p21__col--name {
   font-family: var(--font-base);
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--ink);
@@ -1439,6 +1659,13 @@
   font-weight: 800;
   letter-spacing: -0.028em;
   color: var(--ink);
+  margin-bottom: 36px;
+}
+
+.p22__logo {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
   margin-bottom: 36px;
 }
 

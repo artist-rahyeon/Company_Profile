@@ -13,7 +13,10 @@
       "Bash(cp \"/Users/artist_rahyeon/code/학원소개서/Gemini_Generated_Image_dr0h49dr0h49dr0h.jpeg\" /Users/artist_rahyeon/code/학원소개서/assets/cover/light-wall.jpeg)",
       "Bash(cp \"/Users/artist_rahyeon/code/학원소개서/Gemini_Generated_Image_vv5zq4vv5zq4vv5z.jpeg\" /Users/artist_rahyeon/code/학원소개서/assets/cover/stilllife.jpeg)",
       "Bash(git add:*)",
-      "Bash(git commit -m 'v10.1 — 작업 전 백업 \\(그레이 톤 + 디바이더 작업 시작 전\\):*)"
+      "Bash(git commit -m 'v10.1 — 작업 전 백업 \\(그레이 톤 + 디바이더 작업 시작 전\\):*)",
+      "Bash(python3 -c \" import sys, json for line in sys.stdin: try: obj = json.loads\\(line\\) if obj.get\\('role'\\) == 'user': for part in obj.get\\('content', []\\): if isinstance\\(part, dict\\) and part.get\\('type'\\) == 'text': text = part['text'] if '교육은 사람이 아니라' in text or '교육의 본질' in text or '두 개 버전' in text: print\\(text[:5000]\\) print\\('---END---'\\) except: pass \")",
+      "Bash(python3 -c \" import sys, json with open\\('/Users/artist_rahyeon/.claude/projects/-Users-artist-rahyeon-code------/fcb0377c-bdee-41e6-b13e-afeff78d94ab.jsonl', 'r'\\) as f: for line in f: try: obj = json.loads\\(line.strip\\(\\)\\) if obj.get\\('role'\\) == 'user': content = obj.get\\('content', []\\) if isinstance\\(content, list\\): for part in content: if isinstance\\(part, dict\\) and part.get\\('type'\\) == 'text': text = part['text'] if '버전' in text and len\\(text\\) > 200: print\\(text[:5000]\\) print\\('===SEPARATOR==='\\) except: pass \")",
+      "Bash(python3)"
     ],
     "additionalDirectories": [
       "/Users/artist_rahyeon/code/학원소개서"
