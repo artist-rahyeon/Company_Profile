@@ -11,7 +11,9 @@
       "WebFetch(domain:gakkin-studio.com)",
       "Bash(mkdir -p /Users/artist_rahyeon/code/학원소개서/assets/cover)",
       "Bash(cp \"/Users/artist_rahyeon/code/학원소개서/Gemini_Generated_Image_dr0h49dr0h49dr0h.jpeg\" /Users/artist_rahyeon/code/학원소개서/assets/cover/light-wall.jpeg)",
-      "Bash(cp \"/Users/artist_rahyeon/code/학원소개서/Gemini_Generated_Image_vv5zq4vv5zq4vv5z.jpeg\" /Users/artist_rahyeon/code/학원소개서/assets/cover/stilllife.jpeg)"
+      "Bash(cp \"/Users/artist_rahyeon/code/학원소개서/Gemini_Generated_Image_vv5zq4vv5zq4vv5z.jpeg\" /Users/artist_rahyeon/code/학원소개서/assets/cover/stilllife.jpeg)",
+      "Bash(git add:*)",
+      "Bash(git commit -m 'v10.1 — 작업 전 백업 \\(그레이 톤 + 디바이더 작업 시작 전\\):*)"
     ],
     "additionalDirectories": [
       "/Users/artist_rahyeon/code/학원소개서"
