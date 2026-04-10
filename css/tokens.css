@@ -1,11 +1,12 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 
 :root {
-  /* ══ PAPER (background) · toggleable ══ */
-  --paper-warm:    #F6F5F2;   /* Aesop / Kinfolk 계열 웜 크림 */
+  /* ══ PAPER (background) ══ */
+  --paper-warm:    #F6F5F2;   /* 크림 · 인사말 등 특수 페이지용 */
+  --paper-gray:    #EEEDED;   /* 그레이쥬 · 기본 배경 */
   --paper-neutral: #FAFAFA;   /* 뉴트럴 오프화이트 */
-  --paper:         var(--paper-warm);
-  --paper-shadow:  #EAE8E3;
+  --paper:         var(--paper-gray);
+  --paper-shadow:  #E2E1DF;
 
   /* ══ INK (text) · print-safe ══ */
   --ink:     #141519;                        /* 본문 100% */
@@ -31,6 +32,9 @@
   --font-base: 'Pretendard', 'Noto Sans KR', sans-serif;
 }
 
+body.theme-warm {
+  --paper: var(--paper-warm);
+}
 body.theme-neutral {
   --paper: var(--paper-neutral);
 }

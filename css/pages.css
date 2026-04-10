@@ -11,9 +11,23 @@
    page-label(140) → eng(188) → title(216, 84px)
    → rule(328) → sub(348, 22px) → content(440)
    ══════════════════════════════════════════ */
-.p02__eng, .p03__eng, .p04__eng, .p05__eng, .p06__eng, .p07__eng, .p08__eng,
-.p09__eng, .p10__eng, .p11__eng, .p12__eng, .p13__eng, .p14__eng, .p19__eng,
-.p20__eng, .p21__eng, .branch__eng {
+.p02__eng,
+.p03__eng,
+.p04__eng,
+.p05__eng,
+.p06__eng,
+.p07__eng,
+.p08__eng,
+.p09__eng,
+.p10__eng,
+.p11__eng,
+.p12__eng,
+.p13__eng,
+.p14__eng,
+.p19__eng,
+.p20__eng,
+.p21__eng,
+.branch__eng {
   position: absolute;
   top: 188px;
   left: var(--margin-x);
@@ -25,9 +39,23 @@
   text-transform: uppercase;
 }
 
-.p02__title, .p03__title, .p04__title, .p05__title, .p06__title, .p07__title,
-.p08__title, .p09__title, .p10__title, .p11__title, .p12__title, .p13__title,
-.p14__title, .p19__title, .p20__title, .p21__title, .branch__title {
+.p02__title,
+.p03__title,
+.p04__title,
+.p05__title,
+.p06__title,
+.p07__title,
+.p08__title,
+.p09__title,
+.p10__title,
+.p11__title,
+.p12__title,
+.p13__title,
+.p14__title,
+.p19__title,
+.p20__title,
+.p21__title,
+.branch__title {
   position: absolute;
   top: 216px;
   left: var(--margin-x);
@@ -49,9 +77,23 @@
   opacity: 0.45;
 }
 
-.p02__sub, .p03__sub, .p04__sub, .p05__sub, .p06__sub, .p07__sub, .p08__sub,
-.p09__sub, .p10__sub, .p11__sub, .p12__sub, .p13__sub, .p14__sub, .p19__sub,
-.p20__sub, .p21__sub, .branch__sub {
+.p02__sub,
+.p03__sub,
+.p04__sub,
+.p05__sub,
+.p06__sub,
+.p07__sub,
+.p08__sub,
+.p09__sub,
+.p10__sub,
+.p11__sub,
+.p12__sub,
+.p13__sub,
+.p14__sub,
+.p19__sub,
+.p20__sub,
+.p21__sub,
+.branch__sub {
   position: absolute;
   top: 348px;
   left: var(--margin-x);
@@ -116,7 +158,7 @@
 .step-card {
   padding: 28px 30px 32px;
   border: 1px solid var(--rule);
-  background: var(--paper);
+  background: #F5F4F3;
   min-height: 248px;
   display: flex;
   flex-direction: column;
@@ -155,10 +197,138 @@
 
 
 /* ══════════════════════════════════════════
+   CHAPTER DIVIDER · dark full page
+   ══════════════════════════════════════════ */
+.divider {
+  background: #141519;
+}
+
+.divider__num {
+  position: absolute;
+  top: 50%;
+  left: var(--margin-x);
+  transform: translateY(-72%);
+  font-family: var(--font-base);
+  font-size: 240px;
+  font-weight: 800;
+  line-height: 0.85;
+  letter-spacing: -0.045em;
+  color: rgba(246, 245, 242, 0.07);
+}
+
+.divider__eng {
+  position: absolute;
+  top: 50%;
+  left: var(--margin-x);
+  transform: translateY(-12px);
+  font-family: var(--font-base);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  color: rgba(246, 245, 242, 0.4);
+  text-transform: uppercase;
+}
+
+.divider__title {
+  position: absolute;
+  top: 50%;
+  left: var(--margin-x);
+  transform: translateY(18px);
+  font-family: var(--font-base);
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.028em;
+  color: #F6F5F2;
+}
+
+.divider__sub {
+  position: absolute;
+  top: 50%;
+  left: var(--margin-x);
+  transform: translateY(90px);
+  font-family: var(--font-base);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  color: rgba(246, 245, 242, 0.5);
+}
+
+.divider__rule {
+  position: absolute;
+  top: 50%;
+  left: var(--margin-x);
+  transform: translateY(6px);
+  width: 48px;
+  height: 1px;
+  background: rgba(246, 245, 242, 0.25);
+}
+
+.divider__page-num {
+  position: absolute;
+  bottom: 72px;
+  right: var(--margin-x);
+  font-family: var(--font-base);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: rgba(246, 245, 242, 0.35);
+  text-transform: uppercase;
+}
+
+/* photo variant · 풀블리드 시설 사진 */
+.divider--photo .divider__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  z-index: 0;
+}
+
+.divider--photo .divider__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg,
+      rgba(20, 21, 25, 0.5) 0%,
+      rgba(20, 21, 25, 0.2) 35%,
+      rgba(20, 21, 25, 0.45) 60%,
+      rgba(20, 21, 25, 0.88) 100%);
+}
+
+.divider--photo .divider__num,
+.divider--photo .divider__eng,
+.divider--photo .divider__rule,
+.divider--photo .divider__title,
+.divider--photo .divider__sub,
+.divider--photo .divider__page-num {
+  z-index: 2;
+}
+
+
+/* ══════════════════════════════════════════
    PAGE 01 · COVER (dark)
    ══════════════════════════════════════════ */
 #p01 {
   background: #141519;
+}
+
+/* ambient light bloom · 중앙 스포트라이트 */
+.p01__glow {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 720px;
+  height: 520px;
+  background: radial-gradient(ellipse 100% 100%,
+      rgba(246, 245, 242, 0.055) 0%,
+      rgba(246, 245, 242, 0.02) 40%,
+      transparent 72%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .p01__eyebrow {
@@ -171,8 +341,9 @@
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.36em;
-  color: rgba(246, 245, 242, 0.58);
+  color: rgba(246, 245, 242, 0.48);
   text-transform: uppercase;
+  z-index: 1;
 }
 
 .p01__inner {
@@ -184,6 +355,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 1;
+}
+
+/* 로고 이미지 · 인버트+밝기 조정으로 크림색 */
+.p01__logo {
+  width: 480px;
+  height: auto;
+  filter: invert(1) brightness(0.96);
+  opacity: 0.95;
+  margin-bottom: 48px;
+  /* 은은한 빛 번짐 · 럭셔리 디스플레이 */
+  -webkit-filter: invert(1) brightness(0.96) drop-shadow(0 0 80px rgba(246, 245, 242, 0.08));
+  filter: invert(1) brightness(0.96) drop-shadow(0 0 80px rgba(246, 245, 242, 0.08));
 }
 
 .p01__title {
@@ -195,6 +379,7 @@
   color: #F6F5F2;
   text-align: center;
   margin-bottom: 48px;
+  display: none;
 }
 
 .p01__rule {
@@ -315,9 +500,30 @@
 /* ══════════════════════════════════════════
    PAGE 03 · MESSAGE (원장 인사말)
    ══════════════════════════════════════════ */
-.p03__body {
+.p03__quote {
   position: absolute;
   top: 440px;
+  left: var(--margin-x);
+  right: var(--margin-x);
+  padding: 36px 0;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  margin: 0;
+}
+
+.p03__quote-text {
+  font-family: var(--font-base);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.018em;
+  color: var(--ink);
+  word-break: keep-all;
+}
+
+.p03__body {
+  position: absolute;
+  top: 660px;
   left: var(--margin-x);
   right: var(--margin-x);
   display: flex;
@@ -463,6 +669,16 @@
   line-height: 1.55;
   color: var(--ink-85);
   word-break: keep-all;
+}
+
+
+/* ── P05 center-axis mission ── */
+#p05 .p05__mission {
+  text-align: center;
+}
+
+#p05 .p05__mission-statement {
+  font-size: 30px;
 }
 
 
@@ -1005,40 +1221,41 @@
   right: var(--margin-x);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 0;
   border-top: 2px solid var(--ink);
-  border-left: 1px solid var(--rule);
 }
 
 .p19__metric {
-  padding: 32px 28px 30px;
-  border-right: 1px solid var(--rule);
+  padding: 40px 8px 36px;
   border-bottom: 1px solid var(--rule);
-  min-height: 148px;
-}
-
-.p19__metric-label {
-  font-family: var(--font-base);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.24em;
-  color: var(--ink-50);
-  text-transform: uppercase;
-  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .p19__metric-value {
   font-family: var(--font-base);
-  font-size: 44px;
+  font-size: 96px;
   font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.022em;
+  line-height: 0.9;
+  letter-spacing: -0.035em;
   color: var(--ink);
-  word-break: keep-all;
+  font-feature-settings: "tnum";
+  white-space: nowrap;
 }
 
+.p19__metric-label {
+  font-family: var(--font-base);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink-50);
+}
+
+/* 하이라이트 리스트 */
 .p19__list-label {
   position: absolute;
-  top: 760px;
+  top: 860px;
   left: var(--margin-x);
   right: var(--margin-x);
   padding-bottom: 14px;
@@ -1053,7 +1270,7 @@
 
 .p19__list {
   position: absolute;
-  top: 806px;
+  top: 906px;
   left: var(--margin-x);
   right: var(--margin-x);
   list-style: none;
@@ -1063,9 +1280,9 @@
 
 .p19__list li {
   display: grid;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: 100px 1fr;
   gap: 24px;
-  padding: 18px 0;
+  padding: 16px 0;
   border-bottom: 1px solid var(--rule);
   align-items: baseline;
 }
@@ -1080,10 +1297,10 @@
 
 .p19__list-text {
   font-family: var(--font-base);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   line-height: 1.5;
-  color: var(--ink);
+  color: var(--ink-85);
   word-break: keep-all;
 }
 
